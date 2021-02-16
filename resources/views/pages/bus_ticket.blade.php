@@ -9,14 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bus_ticket_style.css') }}">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 <form action="{{ route('search_result') }}" method="GET">
@@ -54,14 +47,14 @@
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <button type="submit" class="form-control" style="background-color: #630460; color: white"><i class="fa fa-search"> Search Bus</i></button>
+                            <button type="submit" class="form-control" style="background-color: #212121; color: white"><i class="fa fa-search"> Search Bus</i></button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-12 col-lg-6">
                 <div class="image_wrapper">
-                    <img src="image/resume_one.png" alt="...">
+                    <img src="images/bus.jpeg" class="img-fluid img-thumbnail" style="max-width: 100%;" alt="Responsive image">
                 </div>
             </div>
         </div>
