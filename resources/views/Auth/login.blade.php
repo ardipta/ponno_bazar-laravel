@@ -22,14 +22,15 @@
 
                     <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
 
-                    <form id="loginform" class="form-horizontal" role="form" method="POSt" action="{{route('login.post')}}">
+                    <form class="form-horizontal" role="form" method="POSt" action="{{route('login.post')}}">
+                        @csrf
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input id="login-username" type="text" class="form-control" name="username" value="" placeholder="username">
+                            <input id="login-username" type="text" class="form-control" name="phone" placeholder="Enter your phone number">
                         </div>
                         <div style="margin-bottom: 25px" class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                            <input id="login-password" type="password" class="form-control" name="password" placeholder="password">
+                            <input id="login-password" type="password" class="form-control" name="password" placeholder="Enter your password">
                         </div>
                         <div class="input-group">
                             <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me

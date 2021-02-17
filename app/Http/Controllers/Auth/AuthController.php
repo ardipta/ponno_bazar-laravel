@@ -21,13 +21,13 @@ class AuthController extends Controller
     public function process_login(Request $request)
     {
         $request->validate([
-            'name' => 'required',
+            'phone' => 'required',
             'password' => 'required'
         ]);
 
         $credentials = $request->except(['_token']);
 
-        $user = User::where('name',$request->name)->first();
+        $user = User::where('phone',$request->phone)->first();
 
         if (auth()->attempt($credentials)) {
             if(auth()->user()->is_admin == 1){
@@ -45,17 +45,29 @@ class AuthController extends Controller
     {
         return view('Auth.register');
     }
+    public function complete_register()
+    {
+        return view('Auth.complete_registration');
+    }
     public function process_signup(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'email' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'gender' => 'required',
+            'phone' => 'required',
             'password' => 'required'
         ]);
-
+        $day = $request->input('day');
+        $month = $request->input('month');
+        $year = $request->input('year');
+        $dateOfBirth = $day."-".$month."-".$year;
         $user = User::create([
-            'name' => trim($request->input('name')),
-            'email' => strtolower($request->input('email')),
+            'first_name' => trim($request->input('first_name')),
+            'last_name' => trim($request->input('last_name')),
+            'gender' => strtolower($request->input('gender')),
+            'date_of_birth' => strtolower($dateOfBirth),
+            'phone' => trim($request->input('phone')),
             'password' => bcrypt($request->input('password')),
         ]);
 
@@ -66,7 +78,6 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-
         return redirect()->route('login');
     }
 }

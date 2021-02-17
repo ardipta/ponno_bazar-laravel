@@ -48,13 +48,13 @@
                     <!-- Logo icon -->
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
-                        <img src="plugins/images/logo-icon.png" alt="homepage" />
+                        <img src="{{asset('plugins/images/logo-icon.png')}}" alt="homepage" />
                     </b>
                     <!--End Logo icon -->
                     <!-- Logo text -->
                     <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                            <img src="{{asset('plugins/images/logo-text.png')}}" alt="homepage" />
                         </span>
                 </a>
                 <!-- ============================================================== -->
@@ -85,7 +85,7 @@
                     <!-- Search -->
                     <!-- ============================================================== -->
                     <li class=" in">
-                        <form role="search" class="app-search d-none d-md-block mr-3">
+                        <form role="search" class="app-search d-none d-md-block mr-10">
                             <input type="text" placeholder="Search..." class="form-control mt-0">
                             <a href="" class="active">
                                 <i class="fa fa-search"></i>
@@ -96,9 +96,9 @@
                     <!-- User profile and search -->
                     <!-- ============================================================== -->
                     <li>
-                        <a class="profile-pic" href="#">
-                            <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
-                                 class="img-circle"><span class="text-white font-medium">Steave</span></a>
+                        <a class="profile-pic dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user"></i><span class="text-white font-medium"> Steave</span>
+                        </a>
                     </li>
                     <!-- ============================================================== -->
                     <!-- User profile and search -->
@@ -170,12 +170,14 @@
                         </a>
                     </li>
                     <li class="text-center p-20 upgrade-btn">
-                        <a href="https://www.wrappixel.com/templates/ampleadmin/"
-                           class="btn btn-block btn-danger text-white" target="_blank">
-                            Upgrade to Pro</a>
+                        <form action="{{route('logout')}}" method="POST">
+                            @csrf
+                            <button type="submit" href="" class="btn btn-block btn-danger text-white">
+                                Sign out
+                            </button>
+                        </form>
                     </li>
                 </ul>
-
             </nav>
             <!-- End Sidebar navigation -->
         </div>
@@ -201,9 +203,6 @@
                         <ol class="breadcrumb ml-auto">
                             <li><a href="#">Dashboard</a></li>
                         </ol>
-                        <a href="https://wrappixel.com/templates/ampleadmin/" target="_blank"
-                           class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Upgrade
-                            to Pro</a>
                     </div>
                 </div>
             </div>
