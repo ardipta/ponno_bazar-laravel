@@ -14,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\PagesController@index')->name('index');
-Route::get('/bus_ticket', 'App\Http\Controllers\PagesController@bus_ticket')->name('bus_ticket');
-Route::get('/search_result', 'App\Http\Controllers\PagesController@search_result')->name('search_result');
 
+//Authentication
 Route::get('/login','App\Http\Controllers\Auth\AuthController@show_login_form')->name('login');
 Route::post('/login','App\Http\Controllers\Auth\AuthController@process_login')->name('login.post');
 Route::get('/register','App\Http\Controllers\Auth\AuthController@show_signup_form')->name('register');
@@ -24,5 +23,12 @@ Route::get('/register/complete_registration','App\Http\Controllers\Auth\AuthCont
 Route::post('/register','App\Http\Controllers\Auth\AuthController@process_signup')->name('register.post');;
 Route::post('/logout','App\Http\Controllers\Auth\AuthController@logout')->name('logout');
 
-
+// Admin Panel
 Route::get('/admin/dashboard','App\Http\Controllers\Admin\AdminController@dashboard')->name('dashboard');
+Route::get('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController@add_bus_service')->name('add_bus_service');
+Route::post('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController@save_bus_info')->name('save_bus_info');
+
+//Bus Search
+Route::get('/bus_ticket', 'App\Http\Controllers\BusTicketController@bus_ticket')->name('bus_ticket');
+Route::get('/search_result', 'App\Http\Controllers\BusTicketController@search_result')->name('search_result');
+

@@ -149,27 +149,5 @@
                 alert(error.message)
             });
         })
-        // $('#btn-signup').click(function (){
-        //     if ($('.username').val()===""){
-        //         $('#alert').show();
-        //         $('#errorSpan').text("Username field can't be empty!");
-        //     }
-        //     if ($('.full_name').val()===""){
-        //         $('#alert').show();
-        //         $('#errorSpan').text("Full name field can't be empty!");
-        //     }
-        //     if ($('.email').val()===""){
-        //         $('#alert').show();
-        //         $('#errorSpan').text("Email field can't be empty!");
-        //     }
-        //     if ($('.phone').val()===""){
-        //         $('#alert').show();
-        //         $('#errorSpan').text("Phone field can't be empty!");
-        //     }
-        //     if ($('.password').val()===""){
-        //         $('#alert').show();
-        //         $('#errorSpan').text("Password field can't be empty!");
-        //     }
-        // })
     </script>
 @endsection

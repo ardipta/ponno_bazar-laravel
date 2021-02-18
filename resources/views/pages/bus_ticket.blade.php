@@ -20,7 +20,12 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>From</label>
-                            <input type="text" name="from" class="form-control" placeholder="Enter city name">
+                            <input type="text" class="form-control" placeholder="Enter From Point" name="from" list="from" autocomplete="off">
+                            <datalist class="form-control" id="from" style="display: none" >
+                                @foreach ($buses as $bus)
+                                <option value="{{$bus->from}}"></option>
+                                @endforeach
+                            </datalist>
                         </div>
                     </div>
                 </div>
@@ -28,7 +33,12 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label>To</label>
-                            <input type="text" name="to" class="form-control" placeholder="Enter city name">
+                            <input type="text" class="form-control" placeholder="Enter To Point" name="to" list="to" autocomplete="off">
+                            <datalist class="form-control" id="to" style="display: none" >
+                                @foreach ($buses as $bus)
+                                    <option value="{{$bus->to}}"></option>
+                                @endforeach
+                            </datalist>
                         </div>
                     </div>
                 </div>
@@ -36,13 +46,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Date of journey</label>
-                            <input name="date_of_journey" type="date" class="form-control">
+                            <input name="date_range_from" type="date" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Date of return<small>(optional)</small></label>
-                            <input type="date" class="form-control">
+                            <input type="date" name="return_of_journey" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -54,7 +64,7 @@
             </div>
             <div class="col-md-6 col-sm-12 col-lg-6">
                 <div class="image_wrapper">
-                    <img src="images/bus.jpeg" class="img-fluid img-thumbnail" style="max-width: 100%;" alt="Responsive image">
+                    <img src="{{asset('images/bus.jpeg')}}" class="img-fluid img-thumbnail" style="max-width: 100%;" alt="Responsive image">
                 </div>
             </div>
         </div>

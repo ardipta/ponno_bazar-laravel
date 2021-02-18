@@ -196,7 +196,7 @@
                         <div class="form-group">
                             <label for="lastname" class="col-md-3 control-label">Conform Password</label>
                             <div class="col-md-9">
-                                <input type="password" class="form-control" name="confirm_password" placeholder="Confirm your password">
+                                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your password">
                             </div>
                         </div>
 
@@ -229,5 +229,27 @@
                 $("#phone").val(res);
             }
         };
+        // $('#btn-signup').click(function (){
+        //     if ($('.username').val()===""){
+        //         $('#alert').show();
+        //         $('#errorSpan').text("Username field can't be empty!");
+        //     }
+        //     if ($('.full_name').val()===""){
+        //         $('#alert').show();
+        //         $('#errorSpan').text("Full name field can't be empty!");
+        //     }
+        //     if ($('.email').val()===""){
+        //         $('#alert').show();
+        //         $('#errorSpan').text("Email field can't be empty!");
+        //     }
+        //     if ($('.phone').val()===""){
+        //         $('#alert').show();
+        //         $('#errorSpan').text("Phone field can't be empty!");
+        //     }
+        //     if ($('.password').val()===""){
+        //         $('#alert').show();
+        //         $('#errorSpan').text("Password field can't be empty!");
+        //     }
+        // })
     </script>
 @endsection
