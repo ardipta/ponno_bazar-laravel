@@ -21,6 +21,8 @@ class Bus_service extends Model
         'date_range_from',
         'date_range_to',
         'total_seat',
-        'fare'
+        'fare',
+        'description',
+        'bus_image'
     ];
 }

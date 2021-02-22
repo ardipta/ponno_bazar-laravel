@@ -2,27 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bus_service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class BusTicketController extends Controller
 {
     public function bus_ticket(){
-        $buses = DB::table('bus_services')->get();
+        $buses = DB::table('bus_services')->groupBy('from')->groupBy('to')->get();
         return view('pages.bus_ticket',['buses' => $buses]);
     }
     public function search_result(Request $request){
-        $data = DB::table('bus_services');
-        if( $request->from){
-            $data = $data->where('from', 'LIKE', "%" . $request->from . "%");
-        }
-        if( $request->to){
-            $data = $data->where('to', 'LIKE', "%" . $request->to . "%");
-        }
-        if( $request->date_of_journey){
-            $data = $data->where('date_range_from', 'LIKE', "%" . $request->date_range_from . "%");
-        }
-        $data = $data->paginate(10);
-        return view('pages.search_result', compact('data'));
+        $key_from = trim($request->get('from'));
+        $key_to = trim($request->get('to'));
+        $key_date_range_from = trim($request->get('date_range_from'));
+        $posts = Bus_service::query()
+            ->where('from', 'like', "%{$key_from}%")
+            ->where('to', 'like', "%{$key_to}%")
+            ->whereDate('date_range_from', '<=', $key_date_range_from)
+            ->whereDate('date_range_to', '>=', $key_date_range_from)
+            ->orderBy('created_at', 'desc')
+            ->get();
+        return view('pages.search_result', [
+            'posts' => $posts,
+            'key_date_range_from' => $key_date_range_from,
+            'key_from' => $key_from,
+            'key_to' => $key_to,
+        ]);
+    }
+    public function trip_info(Request $request){
+        $id = trim($request->get('id'));
+        $trips = DB::table('bus_services')
+            ->where('id', $id)->get();
+        return view('pages.trip_info', [
+            'trips' => $trips
+        ]);
     }
 }

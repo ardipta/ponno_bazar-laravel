@@ -48,6 +48,7 @@ class AdminController extends Controller
             'total_seat' => trim($request->input('total_seat')),
             'fare' => trim($request->input('fare')),
             'description' => trim($request->input('desc')),
+            'bus_image' => trim($request->input('bus_image')),
         ]);
         return redirect()->route('dashboard');
     }

@@ -13,6 +13,7 @@
 </head>
 <body>
 <form action="{{ route('search_result') }}" method="GET">
+    {{ csrf_field() }}
     <div class="container margin">
         <div class="row">
             <div class="col-lg-6">
@@ -43,16 +44,10 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label>Date of journey</label>
                             <input name="date_range_from" type="date" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label>Date of return<small>(optional)</small></label>
-                            <input type="date" name="return_of_journey" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-12">

@@ -18,6 +18,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- font-awesome icons -->
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet" type="text/css" media="all" />
     <!-- //font-awesome icons -->
+    <link rel="icon" href="{{asset('images/logo.png')}}" type="image/gif" sizes="16x16">
     <!-- js -->
     <script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
     <!-- //js -->
@@ -40,7 +41,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 @include('partials._header')
 @yield('content')
-@include('partials._newsletter')
 @include('partials._footer')
 <!-- script-for sticky-nav -->
 <script>

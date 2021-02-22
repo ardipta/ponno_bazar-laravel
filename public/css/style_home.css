@@ -305,19 +305,34 @@ ul.dropdown-menu.drp-mnu li a i {
 	margin-bottom: 5em;
 }
 .w3l_banner_nav_right_banner{
-	background:url(../images/b2.jpg);
-	background-size:100% 100%;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(../images/b2.jpg);
+    background-size:100% 100%;
     width: 100%;
     height: 500px;
 }
 .w3l_banner_nav_right_banner1{
-    background:url(../images/b3.jpg);
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(../images/b3.jpg);
     background-size:100% 100%;
     width: 100%;
     height: 500px;
 }
 .w3l_banner_nav_right_banner2{
-    background:url(../images/b1.jpg);
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(../images/b1.jpg);
     background-size:100% 100%;
     width: 100%;
     height: 500px;
@@ -1054,7 +1069,7 @@ button.submit.check_out{
 /*-- //newsletter --*/
 /*-- footer --*/
 .footer{
-	padding:4em 0;
+	padding:1em 0;
 	background:#212121;
 }
 .w3_footer_grid h3{
@@ -2839,7 +2854,7 @@ input.checkbox:checked:after {
 }
 @media (max-width:1440px){
 	.w3l_header_right {
-		padding-left: 4em;
+        padding-left: 52em;
 	}
 	.w3l_banner_nav_right_banner3 h3, .w3l_banner_nav_right_banner4 h3, .w3l_banner_nav_right_banner5 h3, .w3l_banner_nav_right_banner6 h3, .w3l_banner_nav_right_banner7 h3, .w3l_banner_nav_right_banner8 h3, .w3l_banner_nav_right_banner9 h3, .w3l_banner_nav_right_banner10 h3 {
 		width: 45%;
@@ -3784,7 +3799,7 @@ input.checkbox:checked:after {
 		margin: .1em 0 1em 5em;
 	}
 	.w3l_header_right {
-		padding-left: 4.5em;
+        padding-left: 8.5em;
 	}
 	.logo_products {
 		padding: 2em 0 1em;

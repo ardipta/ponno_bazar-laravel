@@ -32,3 +32,5 @@ Route::post('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController
 Route::get('/bus_ticket', 'App\Http\Controllers\BusTicketController@bus_ticket')->name('bus_ticket');
 Route::get('/search_result', 'App\Http\Controllers\BusTicketController@search_result')->name('search_result');
 
+Route::get('/bus_ticket/trip_info', 'App\Http\Controllers\BusTicketController@trip_info')->name('trip_info');
+

@@ -28,6 +28,7 @@ class CreateBusServicesTable extends Migration
             $table->string('total_seat');
             $table->string('fare');
             $table->string('description')->nullable();
+            $table->string('bus_image')->nullable();
             $table->timestamps();
         });
     }
