@@ -10,14 +10,14 @@
                 <!-- Logo icon -->
                 <b class="logo-icon">
                     <!-- Dark Logo icon -->
-                    <img src="{{asset('images/logo.png')}}" class="img-fluid" style="max-width: 100%" alt="homepage" />
+                    <img src="{{asset('images/logo.png')}}" class="img-fluid" style="max-width: 100%" height="50px" alt="homepage" />
                 </b>
                 <!--End Logo icon -->
-                <!-- Logo text -->
                 <span class="logo-text">
                     <!-- dark Logo text -->
-                    <img src="{{asset('plugins/images/logo-light-text.png')}}"  alt="homepage" />
+                    <img src="{{asset('plugins/images/logo-user-text.png')}}"  alt="homepage" />
                 </span>
+                <!-- Logo text -->
             </a>
             <!-- ============================================================== -->
             <!-- End Logo -->
@@ -59,7 +59,7 @@
                 <!-- ============================================================== -->
                 <li>
                     <a class="profile-pic dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user"></i><span class="text-white font-medium">  {{$users->first_name.$users->last_name}}</span>
+                        <i class="fa fa-user"></i><span class="text-white font-medium"> {{$users->first_name." ".$users->last_name}}</span>
                     </a>
                 </li>
                 <!-- ============================================================== -->

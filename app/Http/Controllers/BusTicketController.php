@@ -38,4 +38,17 @@ class BusTicketController extends Controller
             'trips' => $trips
         ]);
     }
+
+    public function confirm_ticket(Request $request){
+        $id = trim($request->get('id'));
+        $total_fare = trim($request->get('totalFare'));
+        $seat_number = trim($request->get('seatNumber'));
+        $confirms = DB::table('bus_services')
+            ->where('id', $id)->get();
+        return view('pages.confirm_ticket', [
+            'confirms' => $confirms,
+            'total_fare' => $total_fare,
+            'seat_number' => $seat_number,
+        ]);
+    }
 }

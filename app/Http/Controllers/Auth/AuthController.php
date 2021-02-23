@@ -33,8 +33,8 @@ class AuthController extends Controller
             if(auth()->user()->is_admin == 1){
                 return redirect()->route('dashboard');
             }
-            else{
-                return redirect()->route('Users.dashboard');
+            else if (auth()->user()->is_admin == 0){
+                return redirect()->route('users.dashboard');
             }
         }else{
             session()->flash('message', 'Invalid credentials');
@@ -68,6 +68,7 @@ class AuthController extends Controller
             'gender' => strtolower($request->input('gender')),
             'date_of_birth' => strtolower($dateOfBirth),
             'phone' => trim($request->input('phone')),
+            'is_admin' => 0,
             'password' => bcrypt($request->input('password')),
         ]);
 

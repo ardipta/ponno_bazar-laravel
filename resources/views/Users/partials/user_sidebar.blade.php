@@ -18,7 +18,7 @@
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
                        aria-expanded="false">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <span class="hide-menu"> {{$users->first_name}}</span>
+                        <span class="hide-menu"> {{$users->first_name." ".$users->last_name}}</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

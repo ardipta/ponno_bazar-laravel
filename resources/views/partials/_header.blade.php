@@ -25,8 +25,14 @@
                 <div class="mega-dropdown-menu">
                     <div class="w3ls_vegetables">
                         <ul class="dropdown-menu drp-mnu">
-                            <li><a href="{{route('login')}}">Login</a></li>
-                            <li><a href="{{route('register')}}">Sign Up</a></li>
+                            @auth
+                                <li><a href=""><i class="fa fa-user"></i> Logged as {{auth()->user()->first_name." ".auth()->user()->last_name}}</a></li>
+                                <li><a href="{{route('users.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                            @endauth
+                            @guest
+                                <li><a href="{{route('login')}}"><i class="fa fa-sign-in"></i> Login</a></li>
+                                <li><a href="{{route('register')}}"><i class="fa fa-user-md"></i> Sign Up</a></li>
+                            @endguest
                         </ul>
                     </div>
                 </div>
@@ -42,7 +48,7 @@
 <div class="logo_products">
     <div class="container">
         <div class="w3ls_logo_products_left">
-            <a href="{{route('index')}}" style="text-decoration: blink"><img src="images/logo.png" style="max-width: 100%" alt="Responsive image"></a>
+            <a href="{{route('index')}}" style="text-decoration: blink"><img src="{{asset('images/logo.png')}}" style="max-width: 100%" alt="Responsive image"></a>
         </div>
         <div class="w3ls_logo_products_left1">
             <ul class="special_items">

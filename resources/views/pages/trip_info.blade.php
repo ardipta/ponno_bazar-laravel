@@ -18,21 +18,25 @@
                 <div class="form-row col-md-8">
                     <h3 style="text-align: center">Book Seat</h3>
                     <hr>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label>Number of Seat</label>
-                            <input type="number" id="seatNumber" class="form-control" placeholder="Enter Number of Seat">
+                    <form action="{{route('confirm_ticket')}}" method="GET">
+                        {{ csrf_field() }}
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Number of Seat</label>
+                                <input type="number" id="seatNumber" name="seatNumber" class="form-control" placeholder="Enter Number of Seat">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Total</label>
+                                <input id="totalFareAmount" name="totalFare" type="number" class="form-control">
+                                <input name="id" type="hidden" value="{{$trip->id}}" class="form-control">
+                            </div>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label>Total</label>
-                            <input id="totalFareAmount" type="number" class="form-control">
+                        <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <button type="submit" style="background-color: #84C639; color: white" class="btn form-control">Confirm</button>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <button type="submit" style="background-color: #84C639; color: white" class="btn form-control">Confirm</button>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="form-row col-md-4">
                     <h3>
@@ -51,6 +55,18 @@
         </div>
     </div>
     <script>
+        window.onload=function() {
+            var fare = parseFloat($("#fare").text());
+            var totalFare = fare * parseFloat($('#seatNumber').val());
+            if ($('#seatNumber').val() === "" || $('#seatNumber').val() == null){
+                $('#seatNumber').val(1);
+                $("#totalFareAmount").val(fare);
+            }
+            else {
+                $("#totalFareAmount").val(totalFare);
+            }
+        };
+
         $("#seatNumber").on("input", function() {
             var fare = parseFloat($("#fare").text());
             var totalFare = fare * parseFloat($(this).val());

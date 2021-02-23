@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 @foreach($posts as $pep)
-                    <div class="form-row col-md-12 col-xs-12" style="margin-bottom: 20px">
+                    <div class="form-row col-md-12 col-xs-12" style="margin-bottom: 20px; border: 1px solid black">
                         <div class="col-md-4 col-xs-4">
                             <span style="font-weight: bold">{{ $pep->bus_service_name }}</span><br>
                             <small>{{ $pep->bus_model }}</small><br>
@@ -49,16 +49,16 @@
                             <span><strong>Starting Point:</strong> {{ $pep->from }}</span><br>
                             <span><strong>Ending Point:</strong> {{ $pep->to }}</span>
                         </div>
-                        <div class="col-md-2 col-xs-2" style="text-align: center">
+                        <div class="col-md-2 col-xs-2" style="text-align: center; margin-top: 20px">
                             <span>{{ $pep->departure_time }}</span><br>
                         </div>
-                        <div class="col-md-2 col-xs-2" style="text-align: center">
+                        <div class="col-md-2 col-xs-2" style="text-align: center; margin-top: 20px">
                             <span>{{ $pep->arrival_time }}</span><br>
                         </div>
-                        <div class="col-md-2 col-xs-2" style="text-align: center">
+                        <div class="col-md-2 col-xs-2" style="text-align: center; margin-top: 20px">
                             <span>{{ $pep->total_seat }}</span><br>
                         </div>
-                        <div class="col-md-2 col-xs-2" style="text-align: center">
+                        <div class="col-md-2 col-xs-2" style="text-align: center; margin-top: 20px">
                             <span style="font-size: 18px; font-weight: bold">৳ {{ $pep->fare }}</span><br>
                             <br>
                             <form action="{{route('trip_info')}}" method="GET">

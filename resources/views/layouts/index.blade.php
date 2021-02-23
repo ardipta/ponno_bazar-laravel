@@ -66,9 +66,7 @@
                                                     <input type="hidden" name="cancel_return" value=" " />
                                                     <input type="submit" name="submit" value="Add to cart" class="button" />
                                                 </fieldset>
-
                                             </form>
-
                                         </div>
                                     </div>
                                 </figure>
