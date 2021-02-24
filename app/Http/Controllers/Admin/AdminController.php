@@ -16,7 +16,6 @@ class AdminController extends Controller
 
     public function dashboard(){
         $users = DB::table('users')->where('is_admin', '1')->first();
-
         return view('Admin.layout.dashboard', ['users' => $users]);
     }
     public function add_bus_service(){

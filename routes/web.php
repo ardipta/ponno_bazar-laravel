@@ -36,6 +36,6 @@ Route::get('/bus_ticket/trip_info', 'App\Http\Controllers\BusTicketController@tr
 Route::get('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTicketController@confirm_ticket')->name('confirm_ticket')->middleware('auth');;
 
 // Users
-Route::get('/users/dashboard','App\Http\Controllers\Users\UserController@dashboard')->name('users.dashboard')->middleware('auth');;
-//Route::get('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController@add_bus_service')->name('add_bus_service')->middleware('admin');
+Route::get('/users/dashboard','App\Http\Controllers\Users\UserController@dashboard')->name('users.dashboard')->middleware('auth');
+Route::get('/users/user_profile','App\Http\Controllers\Users\UserController@user_profile')->name('user_profile')->middleware('auth');
 //Route::post('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController@save_bus_info')->name('save_bus_info')->middleware('admin');

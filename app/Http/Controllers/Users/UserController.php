@@ -12,4 +12,9 @@ class UserController extends Controller
         $users = DB::table('users')->where('is_admin', '0')->first();
         return view('Users.layouts.dashboard', ['users' => $users]);
     }
+
+    public function user_profile(){
+        $users = DB::table('users')->where('is_admin', '0')->first();
+        return view('Users.layouts.user_profile', ['users' => $users]);
+    }
 }

@@ -28,11 +28,19 @@
                         <span class="hide-menu">{{$users->phone}}</span>
                     </a>
                 </li>
-                <li class="sidebar-item p-20">
-                    <a class="waves-effect waves-dark btn" style="background-color: #2f323e" href="{{route('add_bus_service')}}"
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                        aria-expanded="false">
-                        <i class="fa fa-bus" style="color: white" aria-hidden="true"></i>
-                        <span class="hide-menu" style="color: white">Bus Service Add</span>
+                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                        <span class="hide-menu">{{$users->date_of_birth}}</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item p-20">
+                    <a class="waves-effect waves-dark btn" style="background-color: #2f323e" href="{{route('user_profile')}}"
+                       aria-expanded="false">
+                        <i class="fa fa-user-circle" style="color: white" aria-hidden="true"></i>
+                        <span class="hide-menu" style="color: white"> User Profile</span>
                     </a>
                 </li>
                 <li class="text-center p-20 upgrade-btn">
