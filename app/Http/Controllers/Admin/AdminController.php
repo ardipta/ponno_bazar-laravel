@@ -36,24 +36,48 @@ class AdminController extends Controller
             'date_range_to' => 'required',
             'total_seat' => 'required',
             'fare' => 'required',
+            'bus_image' => 'nullable|mimes:jpg, jpeg, png|max:10000',
         ]);
 
-        $bus_service = Bus_service::create([
-            'from' => trim($request->input('from')),
-            'to' => trim($request->input('to')),
-            'bus_service_name' => trim($request->input('bus_service_name')),
-            'bus_type' => strtolower($request->input('bus_type')),
-            'bus_number' => trim($request->input('bus_number')),
-            'bus_model' => trim($request->input('bus_model')),
-            'departure_time' => trim($request->input('departure_time')),
-            'arrival_time' => trim($request->input('arrival_time')),
-            'date_range_from' => trim($request->input('date_range_from')),
-            'date_range_to' => trim($request->input('date_range_to')),
-            'total_seat' => trim($request->input('total_seat')),
-            'fare' => trim($request->input('fare')),
-            'description' => trim($request->input('desc')),
-            'bus_image' => trim($request->input('bus_image')),
-        ]);
+        if($request->hasFile('bus_image')){
+            $file = $request->file('bus_image');
+            $text = $file->getClientOriginalExtension();
+            $fileName = time().'.'.$text;
+            $file->move('uploads/bus images', $fileName);
+            $bus_service = Bus_service::create([
+                'bus_image'=>$fileName,
+                'from' => trim($request->input('from')),
+                'to' => trim($request->input('to')),
+                'bus_service_name' => trim($request->input('bus_service_name')),
+                'bus_type' => strtolower($request->input('bus_type')),
+                'bus_number' => trim($request->input('bus_number')),
+                'bus_model' => trim($request->input('bus_model')),
+                'departure_time' => trim($request->input('departure_time')),
+                'arrival_time' => trim($request->input('arrival_time')),
+                'date_range_from' => trim($request->input('date_range_from')),
+                'date_range_to' => trim($request->input('date_range_to')),
+                'total_seat' => trim($request->input('total_seat')),
+                'fare' => trim($request->input('fare')),
+                'description' => trim($request->input('desc')),
+            ]);
+        }
+        else{
+            $bus_service = Bus_service::create([
+                'from' => trim($request->input('from')),
+                'to' => trim($request->input('to')),
+                'bus_service_name' => trim($request->input('bus_service_name')),
+                'bus_type' => strtolower($request->input('bus_type')),
+                'bus_number' => trim($request->input('bus_number')),
+                'bus_model' => trim($request->input('bus_model')),
+                'departure_time' => trim($request->input('departure_time')),
+                'arrival_time' => trim($request->input('arrival_time')),
+                'date_range_from' => trim($request->input('date_range_from')),
+                'date_range_to' => trim($request->input('date_range_to')),
+                'total_seat' => trim($request->input('total_seat')),
+                'fare' => trim($request->input('fare')),
+                'description' => trim($request->input('desc')),
+            ]);
+        }
         return redirect()->route('dashboard');
     }
 }

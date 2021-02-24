@@ -1,3 +1,6 @@
+<?php
+$image = auth()->user()->image
+    ?>
 @extends('Users.master')
 @section('content')
     <style>
@@ -64,19 +67,19 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="contact-info text-center">
-                        <i class="fa fa-user fa-5x"></i>
+                        @if(auth()->user()->image === "")
+                            <i class="fa fa-user fa-5x"></i>
+                        @else
+                            <img src="{{asset("uploads/images/{$image}")}}" class="img-fluid" style="max-width: 100%">
+                        @endif
+
                         <h2>User Profile</h2>
                         <h4>Update your profile information.</h4>
-                        <div class="form-group">
-                            <label class="control-label">Upload Image</label>
-                            <input type="file" class="form-control" name="profile_image">
-                        </div>
-                        <div class="form-group col-sm-offset-2"><button type="submit" style="color: black" class="btn btn-default">Upload</button></div>
                     </div>
                 </div>
                 <div class="col-md-9">
                     <div class="contact-form">
-                        <form class="form-group" action="{{route('save_bus_info')}}" method="POST">
+                        <form enctype="multipart/form-data" action="{{route('update_profile.post')}}" method="POST">
                             @csrf
                             <div class="form-group">
                                 <div class="form-row">
@@ -110,11 +113,19 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-group col-md-12">
+                            <div class="form-group">
                                 <div class="form-row">
-                                    <label class="control-label col-sm-6">Phone Number</label>
-                                    <div class="col-sm-11">
-                                        <input class="form-control" name="phn" value="{{$users->phone}}" />
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label col-sm-6">Phone Number</label>
+                                        <div class="col-sm-11">
+                                            <input class="form-control" name="phn" value="{{$users->phone}}" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="control-label col-sm-6">Upload Image</label>
+                                        <div class="col-sm-10">
+                                            <input type="file" class="form-control" name="image">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

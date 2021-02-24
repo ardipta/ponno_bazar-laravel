@@ -38,4 +38,5 @@ Route::get('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTick
 // Users
 Route::get('/users/dashboard','App\Http\Controllers\Users\UserController@dashboard')->name('users.dashboard')->middleware('auth');
 Route::get('/users/user_profile','App\Http\Controllers\Users\UserController@user_profile')->name('user_profile')->middleware('auth');
+Route::post('/users/user_profile','App\Http\Controllers\Users\UserController@update_profile')->name('update_profile.post');
 //Route::post('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController@save_bus_info')->name('save_bus_info')->middleware('admin');

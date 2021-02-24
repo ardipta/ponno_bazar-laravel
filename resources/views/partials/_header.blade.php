@@ -28,6 +28,14 @@
                             @auth
                                 <li><a href=""><i class="fa fa-user"></i> Logged as {{auth()->user()->first_name." ".auth()->user()->last_name}}</a></li>
                                 <li><a href="{{route('users.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                                <li style="margin-top: 5px">
+                                    <form action="{{route('logout')}}" method="POST">
+                                        @csrf
+                                        <button type="submit" href="" class="btn btn-block btn-danger text-white">
+                                            <i class="fa fa-sign-out"></i> Logout
+                                        </button>
+                                    </form>
+                                </li>
                             @endauth
                             @guest
                                 <li><a href="{{route('login')}}"><i class="fa fa-sign-in"></i> Login</a></li>

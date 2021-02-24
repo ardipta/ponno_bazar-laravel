@@ -58,7 +58,7 @@
             </div>
                 <div class="col-md-9">
                 <div class="contact-form">
-                    <form class="form-group" action="{{route('save_bus_info')}}" method="POST">
+                    <form enctype="multipart/form-data" class="form-group" action="{{route('save_bus_info')}}" method="POST">
                         @csrf
                             <div class="form-group">
                                 <div class="form-row">
@@ -280,7 +280,7 @@
                                 <div class="form-group col-md-6">
                                     <label class="control-label col-sm-6">Upload Image</label>
                                     <div class="col-sm-10">
-                                        <input type="file" class="form-control" placeholder="Enter Fare Per Seat" name="bus_image">
+                                        <input type="file" class="form-control" name="bus_image">
                                     </div>
                                 </div>
                             </div>
