@@ -9,7 +9,11 @@ use Illuminate\Support\Facades\DB;
 class BusTicketController extends Controller
 {
     public function bus_ticket(){
-        $buses = DB::table('bus_services')->groupBy('from')->groupBy('to')->get();
+        $buses = DB::table('bus_services')
+            ->select('from','to', DB::raw('COUNT(*) as `count`'))
+            ->groupBy('from', 'to')
+            ->havingRaw('COUNT(*) > 1')
+            ->get();
         return view('pages.bus_ticket',['buses' => $buses]);
     }
     public function search_result(Request $request){

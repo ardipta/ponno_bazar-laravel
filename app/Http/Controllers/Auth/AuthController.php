@@ -33,7 +33,7 @@ class AuthController extends Controller
             if(auth()->user()->is_admin == 1){
                 return redirect()->route('dashboard');
             }
-            else if (auth()->user()->is_admin == 0){
+            else{
                 return redirect()->route('users.dashboard');
             }
         }else{

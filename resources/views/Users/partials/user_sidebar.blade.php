@@ -18,21 +18,21 @@
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"
                        aria-expanded="false">
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <span class="hide-menu"> {{$users->first_name." ".$users->last_name}}</span>
+                        <span class="hide-menu"> {{auth()->user()->first_name." ".auth()->user()->last_name}}</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                        aria-expanded="false">
                         <i class="fa fa-phone" aria-hidden="true"></i>
-                        <span class="hide-menu">{{$users->phone}}</span>
+                        <span class="hide-menu">{{auth()->user()->phone}}</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="basic-table.html"
                        aria-expanded="false">
                         <i class="fa fa-calendar" aria-hidden="true"></i>
-                        <span class="hide-menu">{{$users->date_of_birth}}</span>
+                        <span class="hide-menu">{{auth()->user()->date_of_birth}}</span>
                     </a>
                 </li>
 

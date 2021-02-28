@@ -86,13 +86,13 @@ $image = auth()->user()->image
                                     <div class="form-group col-md-6">
                                         <label class="control-label col-sm-6">First Name</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" value="{{$users->first_name}}" name="fName">
+                                            <input type="text" class="form-control" value="{{auth()->user()->first_name}}" name="fName">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label col-sm-6">Last Name</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" value="{{$users->last_name}}" name="lName">
+                                            <input type="text" class="form-control" value="{{auth()->user()->last_name}}" name="lName">
                                         </div>
                                     </div>
                                 </div>
@@ -102,13 +102,13 @@ $image = auth()->user()->image
                                     <div class="form-group col-md-6">
                                         <label class="control-label col-sm-6">Date of Birth</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" value="{{$users->date_of_birth}}" name="dob">
+                                            <input type="text" class="form-control" value="{{auth()->user()->date_of_birth}}" name="dob">
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label class="control-label col-sm-6">Gender</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" value="{{$users->gender}}" name="gender">
+                                            <input type="text" class="form-control" value="{{auth()->user()->gender}}" name="gender">
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +118,7 @@ $image = auth()->user()->image
                                     <div class="form-group col-md-6">
                                         <label class="control-label col-sm-6">Phone Number</label>
                                         <div class="col-sm-11">
-                                            <input class="form-control" name="phn" value="{{$users->phone}}" />
+                                            <input class="form-control" name="phn" value="{{auth()->user()->phone}}" />
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">

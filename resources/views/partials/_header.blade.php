@@ -26,8 +26,13 @@
                     <div class="w3ls_vegetables">
                         <ul class="dropdown-menu drp-mnu">
                             @auth
-                                <li><a href=""><i class="fa fa-user"></i> Logged as {{auth()->user()->first_name." ".auth()->user()->last_name}}</a></li>
-                                <li><a href="{{route('users.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                                @if(auth()->user()->is_admin === 1)
+                                    <li><a href=""><i class="fa fa-user"></i> Logged as {{auth()->user()->first_name." ".auth()->user()->last_name}}</a></li>
+                                    <li><a href="{{route('dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                                @else
+                                    <li><a href=""><i class="fa fa-user"></i> Logged as {{auth()->user()->first_name." ".auth()->user()->last_name}}</a></li>
+                                    <li><a href="{{route('users.dashboard')}}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                                @endif
                                 <li style="margin-top: 5px">
                                     <form action="{{route('logout')}}" method="POST">
                                         @csrf

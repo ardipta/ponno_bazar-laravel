@@ -59,7 +59,7 @@
                 <!-- ============================================================== -->
                 <li>
                     <a class="profile-pic dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user"></i><span class="text-white font-medium"> {{$users->first_name." ".$users->last_name}}</span>
+                        <i class="fa fa-user"></i><span class="text-white font-medium"> {{auth()->user()->first_name." ".auth()->user()->last_name}}</span>
                     </a>
                 </li>
                 <!-- ============================================================== -->

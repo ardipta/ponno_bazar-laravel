@@ -27,13 +27,13 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Total</label>
-                                <input id="totalFareAmount" name="totalFare" type="number" class="form-control">
+                                <input id="totalFareAmount" readonly name="totalFare" type="number" class="form-control">
                                 <input name="id" type="hidden" value="{{$trip->id}}" class="form-control">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
-                                <button type="submit" style="background-color: #84C639; color: white" class="btn form-control">Confirm</button>
+                                <button type="submit" style="background-color: #84C639; color: white" class="btn form-control">Next</button>
                             </div>
                         </div>
                     </form>
