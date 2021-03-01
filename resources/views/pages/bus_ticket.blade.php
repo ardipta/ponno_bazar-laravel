@@ -23,7 +23,7 @@
                             <label>From</label>
                             <input type="text" class="form-control" placeholder="Enter From Point" name="from" list="from" autocomplete="off">
                             <datalist class="form-control" id="from" style="display: none" >
-                                @foreach ($buses as $bus)
+                                @foreach ($buses_from as $bus)
                                 <option value="{{$bus->from}}"></option>
                                 @endforeach
                             </datalist>
@@ -36,8 +36,8 @@
                             <label>To</label>
                             <input type="text" class="form-control" placeholder="Enter To Point" name="to" list="to" autocomplete="off">
                             <datalist class="form-control" id="to" style="display: none" >
-                                @foreach ($buses as $bus)
-                                    <option value="{{$bus->to}}"></option>
+                                @foreach ($buses_to as $bus_to)
+                                    <option value="{{$bus_to->to}}"></option>
                                 @endforeach
                             </datalist>
                         </div>

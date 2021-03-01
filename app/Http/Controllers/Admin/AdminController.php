@@ -15,8 +15,12 @@ class AdminController extends Controller
     }
 
     public function dashboard(){
+        $bus_info = DB::table('bus_services')->orderBy('created_at', 'DESC')->get();
         $users = DB::table('users')->where('is_admin', '1')->first();
-        return view('Admin.layout.dashboard', ['users' => $users]);
+        return view('Admin.layout.dashboard', [
+            'users' => $users,
+            'bus_info' => $bus_info
+        ]);
     }
     public function add_bus_service(){
         $users = DB::table('users')->where('is_admin', '1')->first();
@@ -43,7 +47,7 @@ class AdminController extends Controller
             $file = $request->file('bus_image');
             $text = $file->getClientOriginalExtension();
             $fileName = time().'.'.$text;
-            $file->move('uploads/bus images', $fileName);
+            $file->move('uploads/bus_images', $fileName);
             $bus_service = Bus_service::create([
                 'bus_image'=>$fileName,
                 'from' => trim($request->input('from')),

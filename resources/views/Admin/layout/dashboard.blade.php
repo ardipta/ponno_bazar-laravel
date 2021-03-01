@@ -1,6 +1,6 @@
 @extends('Admin.master')
 @section('content')
-    <div class="page-wrapper">
+        <div class="page-wrapper">
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -74,10 +74,59 @@
                 <h1>
                     <marquee behavior="scroll">Welcome to ponnobazar Admin Panel. Add bus service from left sidebar.</marquee>
                 </h1>
+                <div class="col-md-12">
+                    <table id="example" class="table table-striped table-bordered" style="max-width:100%">
+                        <thead>
+                        <tr>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Bus Service</th>
+                            <th>Bus Type</th>
+                            <th>Bus Number</th>
+                            <th>Model</th>
+                            <th>Dep. time</th>
+                            <th>Arr. time</th>
+                            <th>Date Range From</th>
+                            <th>Date Range To</th>
+                            <th>Total Seat</th>
+                            <th>Fare</th>
+                            <th>Image</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($bus_info as $bus)
+                            <tr>
+                                <td>{{$bus->from}}</td>
+                                <td>{{$bus->to}}</td>
+                                <td>{{$bus->bus_service_name}}</td>
+                                <td>{{$bus->bus_type}}</td>
+                                <td>{{$bus->bus_number}}</td>
+                                <td>{{$bus->bus_model}}</td>
+                                <td>{{$bus->departure_time}}</td>
+                                <td>{{$bus->arrival_time}}</td>
+                                <td>{{$bus->date_range_from}}</td>
+                                <td>{{$bus->date_range_to}}</td>
+                                <td>{{$bus->total_seat}}</td>
+                                <td>{{$bus->fare}}</td>
+                                @if($bus->bus_image)
+                                    <td><img src="{{asset("uploads/bus_images/{$bus->bus_image}")}}" class="img-fluid" style="max-width: 100%"></td>
+                                @else
+                                    <td><img src="{{asset("images/bus_demo.png")}}" class="img-fluid" style="max-width: 100%"></td>
+                                @endif
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <!-- ============================================================== -->
         <!-- End Container fluid  -->
         <!-- ============================================================== -->
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable();
+        } );
+    </script>
 @endsection
