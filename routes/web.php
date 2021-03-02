@@ -34,20 +34,9 @@ Route::get('/search_result', 'App\Http\Controllers\BusTicketController@search_re
 
 Route::get('/bus_ticket/trip_info', 'App\Http\Controllers\BusTicketController@trip_info')->name('trip_info');
 Route::get('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTicketController@confirm_ticket')->name('confirm_ticket')->middleware('auth');;
-Route::post('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTicketController@confirm_ticket')->name('confirm_ticket')->middleware('auth');;
+Route::post('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTicketController@save_ticket_info')->name('save_ticket_info')->middleware('auth');;
 
 // Users
 Route::get('/users/dashboard','App\Http\Controllers\Users\UserController@dashboard')->name('users.dashboard')->middleware('auth');
 Route::get('/users/user_profile','App\Http\Controllers\Users\UserController@user_profile')->name('user_profile')->middleware('auth');
 Route::post('/users/user_profile','App\Http\Controllers\Users\UserController@update_profile')->name('update_profile.post');
-
-
-Route::get('send-mail', function () {
-
-    $details = [
-        'title' => 'Mail from ponnobazar.online',
-        'body' => 'This is for testing email using smtp'
-    ];
-
-    \Mail::to('ashiqur35-2149@diu.edu.bd')->send(new \App\Mail\TicketConfirmMail($details));
-});

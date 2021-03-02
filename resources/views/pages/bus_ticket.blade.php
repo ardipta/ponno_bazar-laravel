@@ -9,7 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/bus_ticket_style.css') }}">
-
 </head>
 <body>
 <form action="{{ route('search_result') }}" method="GET">

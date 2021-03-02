@@ -109,9 +109,9 @@
                                 <td>{{$bus->total_seat}}</td>
                                 <td>{{$bus->fare}}</td>
                                 @if($bus->bus_image)
-                                    <td><img src="{{asset("uploads/bus_images/{$bus->bus_image}")}}" class="img-fluid" style="max-width: 100%"></td>
+                                    <td><img src="{{asset("uploads/bus_images/{$bus->bus_image}")}}" class="img-fluid" style="max-width: 100%; height: 50px"></td>
                                 @else
-                                    <td><img src="{{asset("images/bus_demo.png")}}" class="img-fluid" style="max-width: 100%"></td>
+                                    <td><img src="{{asset("images/bus_demo.png")}}" class="img-fluid" style="max-width: 100%; height: 50px"></td>
                                 @endif
                             </tr>
                         @endforeach

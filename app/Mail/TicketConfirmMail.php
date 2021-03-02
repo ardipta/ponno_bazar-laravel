@@ -29,6 +29,7 @@ class TicketConfirmMail extends Mailable
     public function build()
     {
         return $this->subject('Mail from ponnobazar.online')
-            ->view('mail.ticket');
+            ->view('mail.ticket')
+            ->from('ardipta82@gmail.com');;
     }
 }

@@ -8,7 +8,6 @@
     <title>Ticket</title>
 </head>
 <body>
-<img src="{{asset('images/logo.png')}}" height="300px" width="300px">
 <h1>{{ $details['title'] }}</h1>
 <p>{{ $details['body'] }}</p>
 </body>

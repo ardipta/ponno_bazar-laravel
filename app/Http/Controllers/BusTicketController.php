@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\TicketConfirmMail;
 use App\Models\Bus_service;
+use App\Models\Ticket_information;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class BusTicketController extends Controller
 {
@@ -59,5 +62,46 @@ class BusTicketController extends Controller
             'total_fare' => $total_fare,
             'seat_number' => $seat_number,
         ]);
+    }
+
+    public function save_ticket_info(Request $request){
+        $request->validate([
+            'from' => 'required',
+            'to' => 'required',
+            'bus_service' => 'required',
+            'fullName' => 'required',
+            'phone' => 'required',
+            'gender' => 'required',
+            'emailAddress' => 'required',
+            'date_from' => 'required',
+            'dep_time' => 'required',
+            'seat_no' => 'required',
+            'fare' => 'required',
+        ]);
+        $email = $request->input('emailAddress');
+
+        $details = [
+            'title' => 'Thank you for confirm ticket.',
+            'body' => 'You have successfully confirm your ticket. Please follow the link given below for payment.'
+        ];
+
+
+        $ticket_info = Ticket_information::create([
+            'from' => trim($request->input('from')),
+            'to' => trim($request->input('to')),
+            'bus_service_name' => trim($request->input('bus_service')),
+            'passenger_name' => strtolower($request->input('fullName')),
+            'passenger_phone' => trim($request->input('phone')),
+            'passenger_gender' => trim($request->input('gender')),
+            'passenger_email' => trim($email),
+            'departure_time' => trim($request->input('dep_time')),
+            'date_range_from' => trim($request->input('date_from')),
+            'booked_seat' => trim($request->input('seat_no')),
+            'total_fare' => trim($request->input('fare')),
+        ]);
+
+        Mail::to($email)->send(new TicketConfirmMail($details));
+
+        return redirect()->route('bus_ticket');
     }
 }

@@ -20,7 +20,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- //font-awesome icons -->
     <link rel="icon" href="{{asset('images/logo.png')}}" type="image/gif" sizes="16x16">
     <!-- js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
     <!-- //js -->
