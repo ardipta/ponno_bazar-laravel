@@ -65,6 +65,10 @@ class BusTicketController extends Controller
     }
 
     public function save_ticket_info(Request $request){
+        $mcnt_TxnNo ="Txn".date("Y").date("m").date("d").date("h").date("i").date("s");
+        $order_no  ="ON".date("Y").date("m").date("d").date("h").date("i").date("s");
+        $secret_key = "da86d8cc2fc073f2aa0493b8fd78c9fc";
+
         $request->validate([
             'from' => 'required',
             'to' => 'required',
@@ -79,6 +83,18 @@ class BusTicketController extends Controller
             'fare' => 'required',
         ]);
         $email = $request->input('emailAddress');
+        $from = $request->input('from');
+        $to = $request->input('to');
+        $bus_service = $request->input('bus_service');
+        $fullName = $request->input('fullName');
+        $phone = $request->input('phone');
+        $gender = $request->input('gender');
+        $dep_time= $request->input('dep_time');
+        $date_from = $request->input('date_from');
+        $seat_no = $request->input('seat_no');
+        $fare = $request->input('fare');
+
+        $string = "mcnt_AccessCode=201221170348&mcnt_TxnNo=".$mcnt_TxnNo."&mcnt_ShortName=Landen&mcnt_OrderNo=".$order_no."&mcnt_ShopId=259&mcnt_Amount=".$fare."&mcnt_Currency=BDT";
 
         $details = [
             'title' => 'Thank you for confirm ticket.',
@@ -87,17 +103,17 @@ class BusTicketController extends Controller
 
 
         $ticket_info = Ticket_information::create([
-            'from' => trim($request->input('from')),
-            'to' => trim($request->input('to')),
-            'bus_service_name' => trim($request->input('bus_service')),
-            'passenger_name' => strtolower($request->input('fullName')),
-            'passenger_phone' => trim($request->input('phone')),
-            'passenger_gender' => trim($request->input('gender')),
+            'from' => trim($from),
+            'to' => trim($to),
+            'bus_service_name' => trim($bus_service),
+            'passenger_name' => strtolower($fullName),
+            'passenger_phone' => trim($phone),
+            'passenger_gender' => trim($gender),
             'passenger_email' => trim($email),
-            'departure_time' => trim($request->input('dep_time')),
-            'date_range_from' => trim($request->input('date_from')),
-            'booked_seat' => trim($request->input('seat_no')),
-            'total_fare' => trim($request->input('fare')),
+            'departure_time' => trim($dep_time),
+            'date_range_from' => trim($date_from),
+            'booked_seat' => trim($seat_no),
+            'total_fare' => trim($fare),
         ]);
 
         Mail::to($email)->send(new TicketConfirmMail($details));
