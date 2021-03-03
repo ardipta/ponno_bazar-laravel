@@ -13,7 +13,11 @@ class UserController extends Controller
 {
     public function dashboard(){
         $users = DB::table('users')->get();
-        return view('Users.layouts.dashboard', ['users' => $users]);
+        $ticket_info = DB::table('ticket_informations')->get();
+        return view('Users.layouts.dashboard', [
+            'users' => $users,
+            'ticket_info' => $ticket_info,
+        ]);
     }
 
     public function user_profile(){

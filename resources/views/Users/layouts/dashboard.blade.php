@@ -35,7 +35,41 @@
                     <marquee behavior="scroll">Welcome to ponnobazar User Dashboard.</marquee>
                 </span>
             </div>
-            <div class=""></div>
+            <div class="col-md-12">
+                <h2 style="text-align: center; font-weight: bold">Purchase History</h2>
+                <table id="example" class="table table-striped table-bordered" style="max-width:100%">
+                    <thead>
+                        <tr>
+                            <th>Bus Service</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Journey Date</th>
+                            <th>Departure time</th>
+                            <th>Seat Range</th>
+                            <th>Fare</th>
+                            <th>Payment Status</th>
+                            <th>Download Ticket</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($ticket_info as $ticket)
+                        @if($ticket->passenger_phone === auth()->user()->phone)
+                            <tr>
+                                <td>{{$ticket->bus_service_name}}</td>
+                                <td>{{$ticket->from}}</td>
+                                <td>{{$ticket->to}}</td>
+                                <td>{{$ticket->date_range_from}}</td>
+                                <td>{{$ticket->departure_time}}</td>
+                                <td>{{$ticket->booked_seat}}</td>
+                                <td>{{$ticket->total_fare}} BDT</td>
+                                <td>Due</td>
+                                <td>Download</td>
+                            </tr>
+                        @endif
+                    @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
         <!-- ============================================================== -->
         <!-- End Container fluid  -->

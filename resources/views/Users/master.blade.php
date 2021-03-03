@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="{{asset('plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
     <!-- Custom CSS -->
     <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.css">
 </head>
 
 <body>
@@ -56,7 +59,6 @@
 <!-- ============================================================== -->
 <!-- All Jquery -->
 <!-- ============================================================== -->
-<script src="{{asset('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
 <!-- Bootstrap tether Core JavaScript -->
 <script src="{{asset('plugins/bower_components/popper.js/dist/umd/popper.min.js')}}"></script>
 <script src="{{asset('bootstrap/dist/js/bootstrap.min.js')}}"></script>
