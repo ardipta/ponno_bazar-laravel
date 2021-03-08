@@ -1,5 +1,12 @@
 @extends('layouts.master')
 @section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @include('partials.flash_message')
+            </div>
+        </div>
+    </div>
     @include('partials._banner')
 {{--    <!-- discount offer -->--}}
 {{--    <div class="banner_bottom">--}}

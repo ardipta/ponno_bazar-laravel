@@ -20,6 +20,13 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @include('partials.flash_message')
+                </div>
+            </div>
+        </div>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -59,11 +66,11 @@
                                 <td>{{$ticket->from}}</td>
                                 <td>{{$ticket->to}}</td>
                                 <td>{{$ticket->date_range_from}}</td>
-                                <td>{{$ticket->departure_time}}</td>
-                                <td>{{$ticket->booked_seat}}</td>
-                                <td>{{$ticket->total_fare}} BDT</td>
-                                <td>Due</td>
-                                <td>Download</td>
+                                <td style="text-align: center">{{$ticket->departure_time}}</td>
+                                <td style="text-align: center">{{$ticket->booked_seat}}</td>
+                                <td style="text-align: center">{{$ticket->total_fare}} BDT</td>
+                                <td style="text-align: center">Due</td>
+                                <td style="text-align: center">Download</td>
                             </tr>
                         @endif
                     @endforeach

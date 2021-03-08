@@ -118,6 +118,12 @@
         $('#btn-next').click(function () {
             // get the number
             var number = document.getElementById('phone').value;
+            @foreach($users as $user)
+                if (number.match({{$user->phone}})){
+                    alert("This phone number is already used!!");
+                    return;
+                }
+            @endforeach
             if (number !== ""){
                 $("#nextDiv").hide();
             }

@@ -82,6 +82,7 @@ class AdminController extends Controller
                 'description' => trim($request->input('desc')),
             ]);
         }
-        return redirect()->route('dashboard');
+        return redirect()->route('add_bus_service')
+            ->with('success','Successfully added bus service!');
     }
 }

@@ -46,6 +46,13 @@
             box-shadow:none;
         }
     </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @include('partials.flash_message')
+            </div>
+        </div>
+    </div>
     <div class="page-wrapper">
     <div class="container contact">
         <div class="row">

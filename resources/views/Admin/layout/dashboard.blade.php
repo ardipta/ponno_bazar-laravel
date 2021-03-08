@@ -20,6 +20,13 @@
             </div>
             <!-- /.col-lg-12 -->
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    @include('partials.flash_message')
+                </div>
+            </div>
+        </div>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -126,7 +133,10 @@
     </div>
     <script>
         $(document).ready(function() {
-            $('#example').DataTable();
+            $('#example').DataTable({
+                responsive: true
+            });
+
         } );
     </script>
 @endsection

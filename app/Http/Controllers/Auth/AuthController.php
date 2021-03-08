@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -31,19 +32,24 @@ class AuthController extends Controller
 
         if (auth()->attempt($credentials)) {
             if(auth()->user()->is_admin == 1){
-                return redirect()->route('dashboard');
+                return redirect()->route('dashboard')
+                    ->with('success','Login successful as Admin');
             }
             else{
-                return redirect()->route('users.dashboard');
+                return redirect()->route('users.dashboard')
+                    ->with('success','Login successful!');
             }
         }else{
-            session()->flash('message', 'Invalid credentials');
-            return redirect()->route('login');
+            return redirect()->route('login')
+                ->with('error','Invalid credentials');
         }
     }
     public function show_signup_form()
     {
-        return view('Auth.register');
+        $users = DB::table('users')->get();
+        return view('Auth.register', [
+            'users' => $users,
+        ]);
     }
     public function complete_register()
     {
@@ -53,11 +59,23 @@ class AuthController extends Controller
     {
         $request->validate([
             'first_name' => 'required',
-            'last_name' => 'required',
+            'last_name' => 'nullable',
             'gender' => 'required',
+            'year' => 'required',
+            'month' => 'required',
+            'day' => 'required',
             'phone' => 'required',
-            'password' => 'required'
+            'password' => 'required|confirmed|min:6'
+        ], [
+            'first_name.required' => 'First Name field required',
+            'gender.required' => 'Gender field required',
+            'year.required' => 'Year field required',
+            'month.required' => 'Month field required',
+            'day.required' => 'Day field required',
+            'password.required' => 'Password field required',
+            'password.confirmed' => 'Password not matched ',
         ]);
+
         $day = $request->input('day');
         $month = $request->input('month');
         $year = $request->input('year');
@@ -72,13 +90,13 @@ class AuthController extends Controller
             'password' => bcrypt($request->input('password')),
         ]);
 
-        session()->flash('message', 'Your account is created');
-
-        return redirect()->route('login');
+        return redirect()->route('login')
+            ->with('success','Account creation complete. Now please login');
     }
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('index');
+        return redirect()->route('index')
+            ->with('success','Logged out successful');
     }
 }

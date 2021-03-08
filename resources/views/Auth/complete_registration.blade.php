@@ -20,20 +20,19 @@
                 <div class="panel-body" >
                     <form class="form-horizontal" role="form" action="{{route('register.post')}}" method="POST">
                         @csrf
-                        <div style="display:none" id="alert" class="alert alert-danger">
-                            <p>Error:</p>
-                            <span id="errorSpan"></span>
-                        </div>
-                        <div class="form-group">
+                        <div class="form-group" style="display: none">
                             <label for="phone" class="col-md-3 control-label">Phone</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+                                <input type="hidden" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="first_name" class="col-md-3 control-label">First Name</label>
                             <div class="col-md-9">
                                 <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter your first name">
+                                @if ($errors->has('first_name'))
+                                    <span class="text-danger" style="font-weight: bold">{{ $errors->first('first_name') }}</span>
+                                @endif
                             </div>
                         </div>
                         <div class="form-group">
@@ -111,6 +110,9 @@
                                             <option value="2029"></option>
                                             <option value="2030"></option>
                                         </datalist>
+                                        @if ($errors->has('year'))
+                                            <span class="text-danger" style="font-weight: bold">{{ $errors->first('year') }}</span>
+                                        @endif
                                     </div>
                                     <div class="form-group col-md-5">
                                         <input type="text" class="form-control" placeholder="Month" name="month" list="monthID" autocomplete="off">
@@ -128,6 +130,9 @@
                                             <option value="november"></option>
                                             <option value="december"></option>
                                         </datalist>
+                                        @if ($errors->has('month'))
+                                            <span class="text-danger" style="font-weight: bold">{{ $errors->first('month') }}</span>
+                                        @endif
                                     </div>
                                     <div class="form-group col-md-5">
                                         <input type="text" class="form-control" placeholder="Day" name="day" list="dayID" autocomplete="off">
@@ -164,6 +169,9 @@
                                             <option value="30"></option>
                                             <option value="31"></option>
                                         </datalist>
+                                        @if ($errors->has('day'))
+                                            <span class="text-danger" style="font-weight: bold">{{ $errors->first('day') }}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -179,6 +187,9 @@
                                             <option value="Female"></option>
                                             <option value="Other"></option>
                                         </datalist>
+                                        @if ($errors->has('gender'))
+                                            <span class="text-danger" style="font-weight: bold">{{ $errors->first('gender') }}</span>
+                                        @endif
                                     </div>
                                     <div class="form-group col-md-5">
                                     </div>
@@ -194,12 +205,14 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="lastname" class="col-md-3 control-label">Conform Password</label>
+                            <label for="lastname" class="col-md-3 control-label">Confirm Password</label>
                             <div class="col-md-9">
                                 <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your password">
+                                @if ($errors->has('password'))
+                                    <span class="text-danger" style="font-weight: bold">{{ $errors->first('password') }}</span>
+                                @endif
                             </div>
                         </div>
-
                         <div class="form-group">
                             <!-- Button -->
                             <div class="col-md-offset-3 col-md-9">
