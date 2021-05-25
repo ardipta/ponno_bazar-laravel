@@ -3,52 +3,6 @@ $image = auth()->user()->image
     ?>
 @extends('Users.master')
 @section('content')
-    <style>
-        .contact{
-            padding: 4%;
-            height: 530px;
-        }
-        @media (max-width: 767px){
-            .contact{
-                padding: 4%;
-                height: 1500px;
-            }
-        }
-
-        .col-md-3{
-            background: #ff9b00;
-            padding: 4%;
-            border-top-left-radius: 0.5rem;
-            border-bottom-left-radius: 0.5rem;
-        }
-        .contact-info{
-            margin-top:10%;
-        }
-        .contact-info img{
-            margin-bottom: 15%;
-        }
-        .contact-info h2{
-            margin-bottom: 10%;
-        }
-        .col-md-9{
-            background: #fff;
-            padding: 3%;
-            border-top-right-radius: 0.5rem;
-            border-bottom-right-radius: 0.5rem;
-        }
-        .contact-form label{
-            font-weight:600;
-        }
-        .contact-form button{
-            background: #2f323e;
-            color: #fff;
-            font-weight: 600;
-            width: 25%;
-        }
-        .contact-form button:focus{
-            box-shadow:none;
-        }
-    </style>
     <div class="page-breadcrumb bg-white">
         <div class="row align-items-center">
             <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">

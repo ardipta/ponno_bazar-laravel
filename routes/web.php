@@ -24,7 +24,7 @@ Route::post('/register','App\Http\Controllers\Auth\AuthController@process_signup
 Route::post('/logout','App\Http\Controllers\Auth\AuthController@logout')->name('logout');
 
 // Admin Panel
-Route::get('/admin/dashboard','App\Http\Controllers\Admin\AdminController@dashboard')->name('dashboard')->middleware('admin');;
+Route::get('/admin/dashboard','App\Http\Controllers\Admin\AdminController@dashboard')->name('dashboard')->middleware('admin');
 Route::get('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController@add_bus_service')->name('add_bus_service')->middleware('admin');
 Route::post('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController@save_bus_info')->name('save_bus_info')->middleware('admin');
 
