@@ -14,10 +14,10 @@
     <title>Ample Admin Lite Template by WrapPixel</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
     <!-- Custom CSS -->
-    <link href="{{asset('plugins/bower_components/chartist/dist/chartist.min.css')}}" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
+    <link href="{{asset('admin/plugins/bower_components/chartist/dist/chartist.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css')}}">
     <!-- Custom CSS -->
-    <link href="{{asset('css/style.min.css')}}" rel="stylesheet">
+    <link href="{{asset('admin/css/style.min.css')}}" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.js"></script>
@@ -63,21 +63,21 @@
 <!-- ============================================================== -->
 {{--<script src="{{asset('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>--}}
 <!-- Bootstrap tether Core JavaScript -->
-<script src="{{asset('plugins/bower_components/popper.js/dist/umd/popper.min.js')}}"></script>
-<script src="{{asset('bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('js/app-style-switcher.js')}}"></script>
-<script src="{{asset('plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
+<script src="{{asset('admin/plugins/bower_components/popper.js/dist/umd/popper.min.js')}}"></script>
+<script src="{{asset('admin/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('admin/js/app-style-switcher.js')}}"></script>
+<script src="{{asset('admin/plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js')}}"></script>
 <!--Wave Effects -->
-<script src="{{asset('js/waves.js')}}"></script>
+<script src="{{asset('admin/js/waves.js')}}"></script>
 <!--Menu sidebar -->
-<script src="{{asset('js/sidebarmenu.js')}}"></script>
+<script src="{{asset('admin/js/sidebarmenu.js')}}"></script>
 <!--Custom JavaScript -->
-<script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('admin/js/custom.js')}}"></script>
 <!--This page JavaScript -->
 <!--chartis chart-->
-<script src="{{asset('plugins/bower_components/chartist/dist/chartist.min.js')}}"></script>
-<script src="{{asset('plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
-<script src="{{asset('js/pages/dashboards/dashboard1.js')}}"></script>
+<script src="{{asset('admin/plugins/bower_components/chartist/dist/chartist.min.js')}}"></script>
+<script src="{{asset('admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js')}}"></script>
+<script src="{{asset('admin/js/pages/dashboards/dashboard1.js')}}"></script>
 </body>
 
 </html>

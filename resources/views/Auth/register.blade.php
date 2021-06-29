@@ -29,6 +29,7 @@
                                 <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label for="recaptcha-container" class="col-md-3 control-label">Re-captcha</label>
                             <div class="col-md-9">
