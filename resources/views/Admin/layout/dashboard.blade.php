@@ -1,6 +1,7 @@
 @extends('Admin.master')
 @section('content')
-        <div class="page-wrapper">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+        <div class="page-wrapper" style="margin-top: 70px">
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -38,7 +39,20 @@
             <!-- Three charts -->
             <!-- ============================================================== -->
             <div class="row justify-content-center">
-                <div class="col-lg-4 col-sm-6 col-xs-12">
+                <div class="col-lg-3 col-sm-6 col-xs-12">
+                    <div class="white-box analytics-info">
+                        <h3 class="box-title"><a href="{{route('add_bus_service')}}" style="text-decoration: none">Add Bus Service</a></h3>
+                        <ul class="list-inline two-part d-flex align-items-center mb-0">
+                            <li>
+                                <div class="pl-2">
+                                    <a href="{{route('add_bus_service')}}"><i class="fa fa-plus-square fa-2x"></i></a>
+                                </div>
+                            </li>
+                            <li class="ml-auto"><span class="counter text-success">1</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="white-box analytics-info">
                         <h3 class="box-title">Total Bus Service</h3>
                         <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -51,7 +65,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 col-xs-12">
+                <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="white-box analytics-info">
                         <h3 class="box-title">Total Registered Customer</h3>
                         <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -64,7 +78,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-sm-6 col-xs-12">
+                <div class="col-lg-3 col-sm-6 col-xs-12">
                     <div class="white-box analytics-info">
                         <h3 class="box-title">Total visit</h3>
                         <ul class="list-inline two-part d-flex align-items-center mb-0">
@@ -79,7 +93,7 @@
                     </div>
                 </div>
                 <h1>
-                    <marquee behavior="scroll">Welcome to ponnobazar Admin Panel. Add bus service from left sidebar.</marquee>
+                    <marquee behavior="scroll">Welcome to ponnobazar Admin Panel.</marquee>
                 </h1>
                 <div class="col-md-12">
                     <table id="example" class="table table-striped table-bordered" style="max-width:100%">

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Pages\Users;
+namespace App\Http\Controllers\Users;
 
-use App\Http\Controllers\Pages\Controller;
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Pages\Admin;
+namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Pages\Controller;
+use App\Http\Controllers\Controller;
 use App\Models\Bus_service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

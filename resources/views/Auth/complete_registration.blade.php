@@ -1,29 +1,19 @@
-@extends('layouts.master')
+@extends('layouts.pages.master')
 @section('content')
-    <!-- products-breadcrumb -->
-    <div class="products-breadcrumb">
-        <div class="container">
-            <ul>
-                <li><i class="fa fa-home" aria-hidden="true"></i><a href="{{route('index')}}">Home</a><span>|</span></li>
-                <li>Sign Up</li>
-            </ul>
-        </div>
-    </div>
-    <!-- //products-breadcrumb -->
     <div class="container" id="nextDiv">
         <div style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-            <div class="panel panel-info">
+            <div class="panel panel-success">
                 <div class="panel-heading">
-                    <div class="panel-title text-center" style="font-size: 26px"><strong>Sign Up</strong></div>
+                    <div class="panel-title text-center" style="font-size: 26px"><strong>Complete Registration</strong></div>
                     {{--                <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginbox').show()">Sign In</a></div>--}}
                 </div>
                 <div class="panel-body" >
                     <form class="form-horizontal" role="form" action="{{route('register.post')}}" method="POST">
                         @csrf
-                        <div class="form-group" style="display: none">
+                        <div class="form-group">
                             <label for="phone" class="col-md-3 control-label">Phone</label>
                             <div class="col-md-9">
-                                <input type="hidden" class="form-control" id="phone" name="phone" placeholder="Enter your phone number">
+                                <input type="text" class="form-control" id="phoneNumber" name="phone" placeholder="Enter your phone number">
                             </div>
                         </div>
                         <div class="form-group">
@@ -44,8 +34,8 @@
                         <div class="form-group">
                             <label for="password" class="col-md-3 control-label">Date of Birth</label>
                             <div class="col-md-9">
-                                <div class="form-row">
-                                    <div class="form-group col-md-5">
+                                <div class="row">
+                                    <div class="form-group col-md-4" style="margin: 0;">
                                         <input type="text" class="form-control" placeholder="Year" name="year" list="yearID" autocomplete="off">
                                         <datalist class="form-control" id="yearID" style="display: none" >
                                             <option value="1970"></option>
@@ -110,11 +100,8 @@
                                             <option value="2029"></option>
                                             <option value="2030"></option>
                                         </datalist>
-                                        @if ($errors->has('year'))
-                                            <span class="text-danger" style="font-weight: bold">{{ $errors->first('year') }}</span>
-                                        @endif
                                     </div>
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-md-4" style="margin: 0;">
                                         <input type="text" class="form-control" placeholder="Month" name="month" list="monthID" autocomplete="off">
                                         <datalist class="form-control" id="monthID" style="display: none" >
                                             <option value="january"></option>
@@ -130,11 +117,8 @@
                                             <option value="november"></option>
                                             <option value="december"></option>
                                         </datalist>
-                                        @if ($errors->has('month'))
-                                            <span class="text-danger" style="font-weight: bold">{{ $errors->first('month') }}</span>
-                                        @endif
                                     </div>
-                                    <div class="form-group col-md-5">
+                                    <div class="form-group col-md-4" style="margin: 0;">
                                         <input type="text" class="form-control" placeholder="Day" name="day" list="dayID" autocomplete="off">
                                         <datalist class="form-control" id="dayID" style="display: none" >
                                             <option value="01"></option>
@@ -169,9 +153,6 @@
                                             <option value="30"></option>
                                             <option value="31"></option>
                                         </datalist>
-                                        @if ($errors->has('day'))
-                                            <span class="text-danger" style="font-weight: bold">{{ $errors->first('day') }}</span>
-                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -199,31 +180,9 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="lastname" class="col-md-3 control-label">Password</label>
-                            <div class="col-md-9">
-                                <input type="password" class="form-control" name="password" placeholder="Enter a password">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="lastname" class="col-md-3 control-label">Confirm Password</label>
-                            <div class="col-md-9">
-                                <input type="password" class="form-control" id="confirm_password" name="confirm_password" placeholder="Confirm your password">
-                                @if ($errors->has('password'))
-                                    <span class="text-danger" style="font-weight: bold">{{ $errors->first('password') }}</span>
-                                @endif
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <!-- Button -->
                             <div class="col-md-offset-3 col-md-9">
-                                <button id="btn-confirm" type="submit" class="btn btn-info"><i class="fa fa-sign-in"></i> Confirm</button>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-12 control">
-                                <div style="border-top: 1px solid#888; padding-top:15px; font-size:85%" >
-                                    Already have an account! Sign In <a href="{{route('login')}}">Here</a>
-                                </div>
+                                <button type="submit" style="background-color: #4cb320; color: white" class="btn"><i class="fa fa-sign-in"></i> Confirm</button>
                             </div>
                         </div>
                     </form>
@@ -234,13 +193,8 @@
     <script>
         window.onload=function() {
             var phone_number = sessionStorage.getItem("mobileNumber");
-            if (phone_number === "" || phone_number == null){
-                window.location.href = "{{route('login')}}";
-            }
-            else {
-                var res = phone_number.slice(3);
-                $("#phone").val(res);
-            }
+            var res = phone_number.slice(3);
+            $("#phoneNumber").val(res);
         };
         // $('#btn-signup').click(function (){
         //     if ($('.username').val()===""){

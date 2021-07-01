@@ -5,10 +5,13 @@
             padding: 4%;
             height: 900px;
         }
-        @media (max-width: 767px){
-                .contact{
-                    padding: 4%;
-                    height: 1600px;
+        @media (max-width: 767px) or (max-width: 560px) or (max-width: 450px) or (max-width: 320px){
+            .contact{
+                padding: 4%;
+                height: 1600px;
+            }
+            .page-wrapper{
+                margin-top: 500px;
             }
         }
 
@@ -46,14 +49,7 @@
             box-shadow:none;
         }
     </style>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                @include('partials.flash_message')
-            </div>
-        </div>
-    </div>
-    <div class="page-wrapper">
+    <div class="page-wrapper" style="margin-top: 45px">
     <div class="container contact">
         <div class="row">
             <div class="col-md-3">
@@ -64,6 +60,7 @@
                 </div>
             </div>
                 <div class="col-md-9">
+                    @include('partials.flash_message')
                 <div class="contact-form">
                     <form enctype="multipart/form-data" class="form-group" action="{{route('save_bus_info')}}" method="POST">
                         @csrf

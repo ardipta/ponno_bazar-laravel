@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'App\Http\Controllers\Pages\PagesController@index')->name('index');
 
 //Authentication
-Route::get('/login','App\Http\Controllers\Auth\AuthController@show_login_form')->name('login');
+Route::get('/admin/login','App\Http\Controllers\Auth\AuthController@admin_login')->name('admin_login');
+Route::post('/admin/login','App\Http\Controllers\Auth\AuthController@admin_login_process')->name('admin_login.post');
 Route::post('/login','App\Http\Controllers\Auth\AuthController@process_login')->name('login.post');
-Route::get('/register','App\Http\Controllers\Auth\AuthController@show_signup_form')->name('register');
 Route::get('/register/complete_registration','App\Http\Controllers\Auth\AuthController@complete_register')->name('complete_register');
-Route::post('/register','App\Http\Controllers\Auth\AuthController@process_signup')->name('register.post');;
+Route::post('/register/complete_registration','App\Http\Controllers\Auth\AuthController@process_signup')->name('register.post');;
 Route::post('/logout','App\Http\Controllers\Auth\AuthController@logout')->name('logout');
 
 // Admin Panel

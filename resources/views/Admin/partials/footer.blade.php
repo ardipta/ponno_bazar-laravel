@@ -1,7 +1,7 @@
 <!-- footer -->
 <!-- ============================================================== -->
-<footer class="footer text-center"> 2021 © ponnobazar.online <a
-        href="">Developed by: Md. Ashiqur Rahaman</a>
+<footer class="footer text-center"> All Rights Reserved. © 2021 ponnobazar.digital | Developed by <a
+        href="https://picredo.com/">piCredo Software Ltd</a>
 </footer>
 <!-- ============================================================== -->
 <!-- End footer -->
