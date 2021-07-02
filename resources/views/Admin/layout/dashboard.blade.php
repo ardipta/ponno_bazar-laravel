@@ -97,6 +97,7 @@
                         <tr>
                             <th>From</th>
                             <th>To</th>
+                            <th>Route</th>
                             <th>Bus Service</th>
                             <th>Bus Type</th>
                             <th>Bus Number</th>
@@ -115,6 +116,7 @@
                             <tr>
                                 <td>{{$bus->from}}</td>
                                 <td>{{$bus->to}}</td>
+                                <td>{{$bus->route}}</td>
                                 <td>{{$bus->bus_service_name}}</td>
                                 <td>{{$bus->bus_type}}</td>
                                 <td>{{$bus->bus_number}}</td>

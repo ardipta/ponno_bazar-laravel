@@ -1,17 +1,19 @@
 @extends('layouts.pages.master')
 @section('content')
-{{--    <!-- products-breadcrumb -->--}}
-{{--    <div class="products-breadcrumb">--}}
-{{--        <div class="container">--}}
-{{--            <ul>--}}
-{{--                <li><i class="fa fa-home" aria-hidden="true"></i><a href="{{route('index')}}">Home</a><span>|</span></li>--}}
-{{--                <li><i class="fa fa-outdent" aria-hidden="true"></i><a href="{{route('bus_ticket')}}">Bus Ticket</a><span>|</span></li>--}}
-{{--                <li>Search Result</li>--}}
-{{--            </ul>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <!-- //products-breadcrumb -->--}}
-    <section class="section">
+    <div class=" container container-md-fluid ">
+        <div class="row ">
+            <div class="col-auto col-md-10 ">
+                <nav aria-label="breadcrumb " class="second ">
+                    <ol class="breadcrumb indigo lighten-6 first shadow-lg px-md-4">
+                        <li class="breadcrumb-item font-weight-bold "><a class="black-text text-uppercase " href="#"><span class="mr-md-3 mr-2">home</span></a></li>
+                        <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase" href="#"><span class="mr-md-3 mr-2"></span></a><i class="fa fa-angle-double-right text-uppercase " aria-hidden="true"></i></li>
+                        <li class="breadcrumb-item font-weight-bold"><a class="black-text text-uppercase active-2" href="#"><span>Search Result</span></a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <section class="section" style="padding: 40px">
         <div class="card">
             <div class="card-header text-center" style="padding: 20px">
                 <h2 style="font-weight: bolder">{{$key_from}} - {{$key_to}}</h2>
@@ -34,7 +36,7 @@
                         <tr>
                             <td>
                                 <span style="font-weight: bold; font-size: 20px; color: black">{{ $pep->bus_service_name }}</span><br>
-                                <span style="font-weight: bold; font-size: 20px; color: black">Route: {{ $pep->bus_service_name }}</span><br>
+                                <span style="font-weight: bold; font-size: 20px; color: black">Route: {{ $pep->route }}</span><br>
                                 <small>{{ $pep->bus_model }}, {{ $pep->bus_type }}</small><br>
                                 <span><strong>Route:</strong> {{ $pep->from }} - {{ $pep->to }}</span><br>
                                 <span><strong>Starting Point:</strong> {{ $pep->from }}</span><br>

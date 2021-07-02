@@ -17,6 +17,7 @@ class CreateBusServicesTable extends Migration
             $table->id();
             $table->string('from');
             $table->string('to');
+            $table->string('route');
             $table->string('bus_service_name');
             $table->string('bus_type');
             $table->string('bus_number');

@@ -18,6 +18,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!--animate-->
     <link href="{{asset('css/animate.css')}}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{asset('css/breadcumbs.css')}}" rel="stylesheet" type="text/css" media="all">
     <script src="{{asset('js/wow.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/vendors/simple-datatables/style.css')}}">
     <script>
@@ -36,7 +37,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3 class="modal-title text-center" id="header"><strong>Login</strong></h3>
+                    <h3 class="modal-title text-center" id="header"><strong>Login/Sign Up</strong></h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -194,6 +195,7 @@
     <!---start-date-piker---->
     <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}" />
     <script src="{{asset('js/jquery-ui.js')}}"></script>
+    <script src="{{asset('js/breadcumb.js')}}"></script>
     <script>
         $(function() {
             $( "#datepicker,#datepicker1" ).datepicker();

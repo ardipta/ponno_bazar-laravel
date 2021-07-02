@@ -32,9 +32,10 @@ class AdminController extends Controller
         $request->validate([
             'from' => 'required',
             'to' => 'required',
+            'route' => 'required',
             'bus_service_name' => 'required',
             'bus_type' => 'required',
-            'bus_number' => 'required',
+            'bus_number' => 'nullable',
             'bus_model' => 'required',
             'departure_time' => 'required',
             'arrival_time' => 'required',
@@ -43,6 +44,19 @@ class AdminController extends Controller
             'total_seat' => 'required',
             'fare' => 'required',
             'bus_image' => 'nullable|mimes:jpg, jpeg, png|max:10000',
+        ], [
+            'from.required' => 'From field required',
+            'to.required' => 'To field required',
+            'route.required' => 'Route field required',
+            'bus_service_name.required' => 'Bus Service Name field required',
+            'bus_type.required' => 'Please Select Bus Type',
+            'bus_model.required' => 'Gender field required',
+            'departure_time.required' => 'Departure time field required',
+            'arrival_time.required' => 'Arrival time field required',
+            'date_range_from.required' => 'Date range from field required',
+            'date_range_to.required' => 'Date range to field required',
+            'total_seat.required' => 'Total seat field required',
+            'fare.required' => 'Ticket Fare required',
         ]);
 
         if($request->hasFile('bus_image')){
@@ -54,6 +68,7 @@ class AdminController extends Controller
                 'bus_image'=>$fileName,
                 'from' => trim($request->input('from')),
                 'to' => trim($request->input('to')),
+                'route' => trim($request->input('route')),
                 'bus_service_name' => trim($request->input('bus_service_name')),
                 'bus_type' => strtolower($request->input('bus_type')),
                 'bus_number' => trim($request->input('bus_number')),
@@ -71,6 +86,7 @@ class AdminController extends Controller
             $bus_service = Bus_service::create([
                 'from' => trim($request->input('from')),
                 'to' => trim($request->input('to')),
+                'route' => trim($request->input('route')),
                 'bus_service_name' => trim($request->input('bus_service_name')),
                 'bus_type' => strtolower($request->input('bus_type')),
                 'bus_number' => trim($request->input('bus_number')),
@@ -84,7 +100,12 @@ class AdminController extends Controller
                 'description' => trim($request->input('desc')),
             ]);
         }
-        return redirect()->route('add_bus_service')
-            ->with('success','Successfully added bus service!');
+        if($bus_service){
+            return redirect()->route('add_bus_service')
+                ->with('success','Successfully added bus service!');
+        }
+        else{
+            return redirect()->back()->with('error', 'Something went wrong');
+        }
     }
 }

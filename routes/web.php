@@ -32,7 +32,7 @@ Route::post('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController
 Route::get('/search_result', 'App\Http\Controllers\BusTicketController@search_result')->name('search_result');
 
 Route::get('/bus_ticket/trip_info', 'App\Http\Controllers\BusTicketController@trip_info')->name('trip_info');
-Route::get('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTicketController@confirm_ticket')->name('confirm_ticket')->middleware('auth');;
+Route::get('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTicketController@confirm_ticket')->name('confirm_ticket');
 Route::post('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTicketController@save_ticket_info')->name('save_ticket_info')->middleware('auth');;
 
 // Users

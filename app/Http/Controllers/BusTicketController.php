@@ -6,6 +6,7 @@ use App\Mail\TicketConfirmMail;
 use App\Models\Bus_service;
 use App\Models\Ticket_information;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
@@ -33,22 +34,26 @@ class BusTicketController extends Controller
         $id = trim($request->get('id'));
         $trips = DB::table('bus_services')
             ->where('id', $id)->get();
-        return view('pages.trip_info', [
+        return view('layouts.pages.trip_info', [
             'trips' => $trips
         ]);
     }
 
     public function confirm_ticket(Request $request){
-        $id = trim($request->get('id'));
-        $total_fare = trim($request->get('totalFare'));
-        $seat_number = trim($request->get('seatNumber'));
-        $confirms = DB::table('bus_services')
-            ->where('id', $id)->get();
-        return view('pages.confirm_ticket', [
-            'confirms' => $confirms,
-            'total_fare' => $total_fare,
-            'seat_number' => $seat_number,
-        ]);
+        if (Auth::user()) {   // Check is user logged in
+            $id = trim($request->get('id'));
+            $total_fare = trim($request->get('totalFare'));
+            $seat_number = trim($request->get('seatNumber'));
+            $confirms = DB::table('bus_services')
+                ->where('id', $id)->get();
+            return view('layouts.pages.confirm_ticket', [
+                'confirms' => $confirms,
+                'total_fare' => $total_fare,
+                'seat_number' => $seat_number,
+            ]);
+        } else {
+            return redirect()->back()->with('error', 'You have to login first!!');
+        }
     }
 
     public function save_ticket_info(Request $request){

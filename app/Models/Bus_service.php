@@ -12,6 +12,7 @@ class Bus_service extends Model
     protected $fillable = [
         'from',
         'to',
+        'route',
         'bus_service_name',
         'bus_type',
         'bus_number',
