@@ -92,43 +92,47 @@
             </div>
         </div>
         <div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
-            <h2>Buy Ticket Now!!</h2>
-            <div class="ban-top">
-                <div class="bnr-left">
-                    <label class="inputLabel">From</label>
-                    <input class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
+            <form action="{{ route('search_result') }}" method="GET">
+                {{ csrf_field() }}
+                <h2>Buy Ticket Now!!</h2>
+                <div class="ban-top">
+                    <div class="bnr-left">
+                        <label class="inputLabel">From</label>
+                        <input class="city" type="text" placeholder="Enter a city" name="from" list="from" autocomplete="off" required=>
+                        <datalist class="form-control" id="from" style="display: none" >
+                            @foreach ($buses_from as $bus)
+                                <option value="{{$bus->from}}"></option>
+                            @endforeach
+                        </datalist>
+                    </div>
+                    <div class="bnr-left">
+                        <label class="inputLabel">To</label>
+                        <input class="city" type="text" placeholder="Enter a city" name="to" list="to" autocomplete="off" required=>
+                        <datalist class="form-control" id="to" style="display: none" >
+                            @foreach ($buses_to as $bus_to)
+                                <option value="{{$bus_to->to}}"></option>
+                            @endforeach
+                        </datalist>
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="bnr-left">
-                    <label class="inputLabel">To</label>
-                    <input class="city" type="text" value="Enter a city" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter a city';}" required=>
+                <div class="ban-bottom">
+                    <div class="bnr-right">
+                        <label class="inputLabel">Date of Journey</label>
+                        <input  type="date" name="date_range_from" style="width: 95%;color: #9E9E9E;outline: none;font-size: 14px;padding: 3px 10px;border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px;">
+                    </div>
+                    <div class="bnr-right">
+                        <label class="inputLabel">Date of Return<span class="opt">&nbsp;(Optional)</span></label>
+                        <input  type="date" style="width: 95%;color: #9E9E9E;outline: none;font-size: 14px;padding: 3px 10px;border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px;">
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="ban-bottom">
-                <div class="bnr-right">
-                    <label class="inputLabel">Date of Journey</label>
-                    <input class="date" id="datepicker" type="text" value="dd-mm-yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'dd-mm-yyyy';}" required=>
+                <div class="sear">
+                    <form action="bus.html">
+                        <button class="seabtn" type="submit">Search Buses</button>
+                    </form>
                 </div>
-                <div class="bnr-right">
-                    <label class="inputLabel">Date of Return<span class="opt">&nbsp;(Optional)</span></label>
-                    <input class="date" id="datepicker1" type="text" value="dd-mm-yyyy" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'dd-mm-yyyy';}" required=>
-                </div>
-                <div class="clearfix"></div>
-                <!---start-date-piker---->
-                <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}" />
-                <script src="{{asset('js/jquery-ui.js')}}"></script>
-                <script>
-                    $(function() {
-                        $( "#datepicker,#datepicker1" ).datepicker();
-                    });
-                </script>
-                <!---/End-date-piker---->
-            </div>
-            <div class="sear">
-                <form action="bus.html">
-                    <button class="seabtn">Search Buses</button>
-                </form>
-            </div>
+            </form>
         </div>
         <div class="clearfix"></div>
     </div>

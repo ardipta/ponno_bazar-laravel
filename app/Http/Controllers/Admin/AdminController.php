@@ -17,9 +17,11 @@ class AdminController extends Controller
     public function dashboard(){
         $bus_info = DB::table('bus_services')->orderBy('created_at', 'DESC')->get();
         $users = DB::table('users')->where('is_admin', '1')->first();
+        $total_users = DB::table('users')->where('is_admin', '1')->get();
         return view('Admin.layout.dashboard', [
             'users' => $users,
-            'bus_info' => $bus_info
+            'bus_info' => $bus_info,
+            'total_users' => $total_users,
         ]);
     }
     public function add_bus_service(){

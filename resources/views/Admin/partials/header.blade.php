@@ -9,7 +9,7 @@
             <a class="navbar-brand" href="{{route('index')}}">
                 <!-- Logo icon -->
                 <b class="logo-icon" style="height: 180px; margin-top: 15px">
-                    <img src="{{asset('images/logo1.webp')}}" style="max-width: 100%; height: 100%">
+
                 </b>
             </a>
             <!-- ============================================================== -->
@@ -56,21 +56,7 @@
                             {{$users->first_name.$users->last_name}}
                         </span>
                     </a>
-                    <form style="line-height: 0; min-height: 15px;" class="profile-pic dropdown-toggle" action="{{route('logout')}}" method="POST">
-                        @csrf
-                        <button type="submit" style="background: none!important;
-                                  border: none;
-                                  padding: 0!important;
-                                  text-decoration: none;
-                                  /*optional*/
-                                  font-family: arial, sans-serif;
-                                  /*input has OS specific font-family*/
-                                  color: #FFFFFF;
-                                  font-weight: bold;
-                                  cursor: pointer;">
-                            Logout
-                        </button>
-                    </form>
+
                 </li>
                 <!-- ============================================================== -->
                 <!-- User profile and search -->

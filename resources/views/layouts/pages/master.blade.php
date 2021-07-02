@@ -19,6 +19,7 @@
     <!--animate-->
     <link href="{{asset('css/animate.css')}}" rel="stylesheet" type="text/css" media="all">
     <script src="{{asset('js/wow.min.js')}}"></script>
+    <link rel="stylesheet" href="{{asset('assets/vendors/simple-datatables/style.css')}}">
     <script>
         new WOW().init();
     </script>
@@ -190,5 +191,16 @@
             });
         })
     </script>
+    <!---start-date-piker---->
+    <link rel="stylesheet" href="{{asset('css/jquery-ui.css')}}" />
+    <script src="{{asset('js/jquery-ui.js')}}"></script>
+    <script>
+        $(function() {
+            $( "#datepicker,#datepicker1" ).datepicker();
+        });
+    </script>
+    <!---/End-date-piker---->
+    <script src="{{asset('assets/vendors/simple-datatables/simple-datatables.js')}}"></script>
+    <script src="{{asset('assets/js/vendors.js')}}"></script>
 </body>
 </html>

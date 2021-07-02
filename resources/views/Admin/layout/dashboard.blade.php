@@ -1,102 +1,98 @@
 @extends('Admin.master')
 @section('content')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
-        <div class="page-wrapper" style="margin-top: 70px">
-        <!-- ============================================================== -->
-        <!-- Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <div class="page-breadcrumb bg-white">
-            <div class="row align-items-center">
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title text-uppercase font-medium font-14">Dashboard</h4>
+    <div class="main-content container-fluid">
+        <div class="page-title">
+            <h3>Dashboard</h3>
+            <p class="text-subtitle text-muted">A good dashboard to display your statistics</p>
+        </div>
+        <section class="section">
+            <div class="row mb-2">
+                <div class="col-12 col-md-3">
+                    <div class="card card-statistic">
+                        <div class="card-body p-0">
+                            <div class="d-flex flex-column">
+                                <div class='px-3 py-3 d-flex justify-content-between'>
+                                    <h3 class='card-title'>Total Bus Service</h3>
+                                    <div class="card-right d-flex align-items-center">
+                                        <p>{{count($bus_info)}} </p>
+                                    </div>
+                                </div>
+                                <div class='px-3 py-3 d-flex justify-content-between'>
+                                    <div class="card-title">
+                                        <i class="fa fa-truck fa-3x" style="color: white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                    <div class="d-md-flex">
-                        <ol class="breadcrumb ml-auto">
-                            <li><a href="#">Admin</a></li>
-                            <li><a href="#"> / Dashboard</a></li>
-                        </ol>
+                <div class="col-12 col-md-3">
+                    <div class="card card-statistic">
+                        <div class="card-body p-0">
+                            <div class="d-flex flex-column">
+                                <div class='px-3 py-3 d-flex justify-content-between'>
+                                    <h3 class='card-title'>Total Ticket Purchase</h3>
+                                    <div class="card-right d-flex align-items-center">
+                                        <p>1</p>
+                                    </div>
+                                </div>
+                                <div class='px-3 py-3 d-flex justify-content-between'>
+                                    <div class="card-title">
+                                        <i class="fa fa-book fa-3x" style="color: white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card card-statistic">
+                        <div class="card-body p-0">
+                            <div class="d-flex flex-column">
+                                <div class='px-3 py-3 d-flex justify-content-between'>
+                                    <h3 class='card-title'>Total registered user</h3>
+                                    <div class="card-right d-flex align-items-center">
+                                        <p>{{count($total_users)}}</p>
+                                    </div>
+                                </div>
+                                <div class='px-3 py-3 d-flex justify-content-between'>
+                                    <div class="card-title">
+                                        <i class="fa fa-user fa-3x" style="color: white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3">
+                    <div class="card card-statistic">
+                        <div class="card-body p-0">
+                            <div class="d-flex flex-column">
+                                <div class='px-3 py-3 d-flex justify-content-between'>
+                                    <h3 class='card-title'>Total Purchase amount</h3>
+                                    <div class="card-right d-flex align-items-center">
+                                        <p>0৳</p>
+                                    </div>
+                                </div>
+                                <div class='px-3 py-3 d-flex justify-content-between'>
+                                    <div class="card-title">
+                                        <i class="fa fa-tags fa-3x" style="color: white"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- /.col-lg-12 -->
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    @include('partials.flash_message')
+            <h1>
+                <marquee behavior="scroll">Welcome to ponnobazar Admin Panel.</marquee>
+            </h1>
+            <div class="card">
+                <div class="card-header text-center" style="font-weight: bolder; font-size: 20px">
+                    Bus Service Details
                 </div>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Bread crumb and right sidebar toggle -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Container fluid  -->
-        <!-- ============================================================== -->
-        <div class="container-fluid">
-            <!-- ============================================================== -->
-            <!-- Three charts -->
-            <!-- ============================================================== -->
-            <div class="row justify-content-center">
-                <div class="col-lg-3 col-sm-6 col-xs-12">
-                    <div class="white-box analytics-info">
-                        <h3 class="box-title"><a href="{{route('add_bus_service')}}" style="text-decoration: none">Add Bus Service</a></h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                                <div class="pl-2">
-                                    <a href="{{route('add_bus_service')}}"><i class="fa fa-plus-square fa-2x"></i></a>
-                                </div>
-                            </li>
-                            <li class="ml-auto"><span class="counter text-success">1</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12">
-                    <div class="white-box analytics-info">
-                        <h3 class="box-title">Total Bus Service</h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                                <div id="sparklinedash"><canvas width="67" height="30"
-                                                                style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
-                                </div>
-                            </li>
-                            <li class="ml-auto"><span class="counter text-success">659</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12">
-                    <div class="white-box analytics-info">
-                        <h3 class="box-title">Total Registered Customer</h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                                <div id="sparklinedash2"><canvas width="67" height="30"
-                                                                 style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
-                                </div>
-                            </li>
-                            <li class="ml-auto"><span class="counter text-purple">869</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 col-xs-12">
-                    <div class="white-box analytics-info">
-                        <h3 class="box-title">Total visit</h3>
-                        <ul class="list-inline two-part d-flex align-items-center mb-0">
-                            <li>
-                                <div id="sparklinedash3"><canvas width="67" height="30"
-                                                                 style="display: inline-block; width: 67px; height: 30px; vertical-align: top;"></canvas>
-                                </div>
-                            </li>
-                            <li class="ml-auto"><span class="counter text-info">911</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <h1>
-                    <marquee behavior="scroll">Welcome to ponnobazar Admin Panel.</marquee>
-                </h1>
-                <div class="col-md-12">
-                    <table id="example" class="table table-striped table-bordered" style="max-width:100%">
+                <div class="card-body">
+                    <table class='table table-striped' id="table1">
                         <thead>
                         <tr>
                             <th>From</th>
@@ -107,8 +103,8 @@
                             <th>Model</th>
                             <th>Dep. time</th>
                             <th>Arr. time</th>
-                            <th>Date Range From</th>
-                            <th>Date Range To</th>
+                            <th>Date From</th>
+                            <th>Date To</th>
                             <th>Total Seat</th>
                             <th>Fare</th>
                             <th>Image</th>
@@ -128,7 +124,7 @@
                                 <td>{{$bus->date_range_from}}</td>
                                 <td>{{$bus->date_range_to}}</td>
                                 <td>{{$bus->total_seat}}</td>
-                                <td>{{$bus->fare}}</td>
+                                <td>{{$bus->fare}} ৳</td>
                                 @if($bus->bus_image)
                                     <td><img src="{{asset("uploads/bus_images/{$bus->bus_image}")}}" class="img-fluid" style="max-width: 100%; height: 50px"></td>
                                 @else
@@ -140,17 +136,6 @@
                     </table>
                 </div>
             </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Container fluid  -->
-        <!-- ============================================================== -->
+        </section>
     </div>
-    <script>
-        $(document).ready(function() {
-            $('#example').DataTable({
-                responsive: true
-            });
-
-        } );
-    </script>
 @endsection

@@ -11,19 +11,6 @@ use Illuminate\Support\Facades\Mail;
 
 class BusTicketController extends Controller
 {
-    public function bus_ticket(){
-        $buses_from = DB::table('bus_services')
-            ->groupBy('from')
-            ->get();
-        $buses_to = DB::table('bus_services')
-            ->groupBy('to')
-            ->get();
-
-        return view('pages.bus_ticket',[
-            'buses_from' => $buses_from,
-            'buses_to' => $buses_to
-        ]);
-    }
     public function search_result(Request $request){
         $key_from = trim($request->get('from'));
         $key_to = trim($request->get('to'));
@@ -35,7 +22,7 @@ class BusTicketController extends Controller
             ->whereDate('date_range_to', '>=', $key_date_range_from)
             ->orderBy('created_at', 'desc')
             ->get();
-        return view('pages.search_result', [
+        return view('layouts.pages.search_result', [
             'posts' => $posts,
             'key_date_range_from' => $key_date_range_from,
             'key_from' => $key_from,
