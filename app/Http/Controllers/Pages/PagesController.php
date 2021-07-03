@@ -20,4 +20,8 @@ class PagesController extends Controller
             'buses_to' => $buses_to
         ]);
     }
+
+    public function contact(){
+        return view('layouts.pages.contact');
+    }
 }

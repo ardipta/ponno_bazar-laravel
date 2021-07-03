@@ -16,15 +16,12 @@
                 <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                     <nav class="cl-effect-1">
                         <ul class="nav navbar-nav">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="faq.html">Faq</a></li>
-                            <li><a href="apps.html">Apps</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="travels.html">Travels</a></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                            <li><a href="agent.html">Agent Registration</a></li>
-                            <li><a href="terms.html">Terms of Use</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="{{route('index')}}">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Travels</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="{{route('contact')}}">Contact Us</a></li>
                             <li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li>
                             <div class="clearfix"></div>
                         </ul>

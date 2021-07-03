@@ -8,7 +8,7 @@
         <ul class="tp-hd-rgt wow fadeInRight animated" data-wow-delay=".5s">
             <li class="tol">Call Center : +880 156-808-6107</li>
             @auth
-                @if(auth()->user()->is_admin === 0)
+                @if(auth()->user()->is_admin === '0')
                     <li class="sigi"><a style="text-decoration: none" href="{{route('users.dashboard')}}"><i class="fa fa-user-md"></i> Logged as {{auth()->user()->first_name." ".auth()->user()->last_name}}</a></li>
                     <li class="sigi"><a style="text-decoration: none" href="{{route('users.dashboard')}}" > | User Dashboard</a></li>
                     <li class="sigi">
@@ -27,7 +27,7 @@
                             </button>
                         </form>
                     </li>
-                @else
+                @elseif(auth()->user()->is_admin === '1')
                     <li class="sigi"><a style="text-decoration: none" href="#"><i class="fa fa-user-md"></i> Logged as {{auth()->user()->first_name." ".auth()->user()->last_name}}</a></li>
                     <li class="sigi"><a style="text-decoration: none" href="{{route('dashboard')}}" > | Admin Dashboard</a></li>
                     <li class="sigi">

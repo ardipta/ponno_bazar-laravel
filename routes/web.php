@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'App\Http\Controllers\Pages\PagesController@index')->name('index');
+Route::get('/contact', 'App\Http\Controllers\Pages\PagesController@contact')->name('contact');
 
 //Authentication
 Route::get('/admin/login','App\Http\Controllers\Auth\AuthController@admin_login')->name('admin_login');

@@ -15,12 +15,12 @@
 <body>
 <div id="app">
     <div id="sidebar" class='active'>
-        @include('admin.partials.sidebar')
+        @include('Admin.partials.sidebar')
     </div>
     <div id="main">
-        @include('admin.partials.navbar')
+        @include('Admin.partials.navbar')
         @yield('content')
-        @include('admin.partials.footer')
+        @include('Admin.partials.footer')
     </div>
 </div>
 <script src="{{asset('assets/js/feather-icons/feather.min.js')}}"></script>

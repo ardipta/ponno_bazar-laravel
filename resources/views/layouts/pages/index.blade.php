@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s">
+        <div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s" id="busTicket">
             <form action="{{ route('search_result') }}" method="GET">
                 {{ csrf_field() }}
                 <h2>Buy Ticket Now!!</h2>
@@ -195,22 +195,22 @@
     </div>
     <!---/holiday---->
     <!---track---->
-    <div class="container">
-        <div class="track">
-            <div class="col-md-6 track-right wow fadeInLeft animated" data-wow-delay=".5s">
-                <a href="track.html"><img src="images/map1.png" class="img-responsive" alt=""></a>
-            </div>
-            <div class="col-md-6 track-left wow fadeInRight animated" data-wow-delay=".5s">
-                <h3>TRACK MY BUS</h3>
-                <p>First of its own kind,bus tracking feature on bus</p>
-                <a href="track.html" class="learn">Learn More</a>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
+{{--    <div class="container">--}}
+{{--        <div class="track">--}}
+{{--            <div class="col-md-6 track-right wow fadeInLeft animated" data-wow-delay=".5s">--}}
+{{--                <a href="track.html"><img src="images/map1.png" class="img-responsive" alt=""></a>--}}
+{{--            </div>--}}
+{{--            <div class="col-md-6 track-left wow fadeInRight animated" data-wow-delay=".5s">--}}
+{{--                <h3>TRACK MY BUS</h3>--}}
+{{--                <p>First of its own kind,bus tracking feature on bus</p>--}}
+{{--                <a href="track.html" class="learn">Learn More</a>--}}
+{{--            </div>--}}
+{{--            <div class="clearfix"></div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
     <!--- /track ---->
     <!--- routes ---->
-    <div class="routes">
+    <div class="routes" style="margin-bottom: 40px">
         <div class="container">
             <div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
                 <div class="rou-left">

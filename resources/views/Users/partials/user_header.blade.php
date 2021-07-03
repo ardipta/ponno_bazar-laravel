@@ -1,73 +1,44 @@
-<!-- Topbar header - style you can find in pages.scss -->
-<!-- ============================================================== -->
-<header class="topbar" data-navbarbg="skin5">
-    <nav class="navbar top-navbar navbar-expand-md navbar-dark">
-        <div class="navbar-header" data-logobg="skin6">
-            <!-- ============================================================== -->
-            <!-- Logo -->
-            <!-- ============================================================== -->
-            <a class="navbar-brand" href="{{route('index')}}">
-                <!-- Logo icon -->
-                <b class="logo-icon">
-                    <!-- Dark Logo icon -->
-                    <img src="{{asset('images/logo.png')}}" class="img-fluid" style="max-width: 100%" height="50px" alt="homepage" />
-                </b>
-                <!--End Logo icon -->
-                <span class="logo-text">
-                    <!-- dark Logo text -->
-                    <img src="{{asset('plugins/images/logo-user-text.png')}}"  alt="homepage" />
-                </span>
-                <!-- Logo text -->
-            </a>
-            <!-- ============================================================== -->
-            <!-- End Logo -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- toggle and nav items -->
-            <!-- ============================================================== -->
-            <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
-               href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Logo -->
-        <!-- ============================================================== -->
-        <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
-            <ul class="navbar-nav d-none d-md-block d-lg-none">
-                <li class="nav-item">
-                    <a class="nav-toggler nav-link waves-effect waves-light text-white"
-                       href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
-                </li>
-            </ul>
-            <!-- ============================================================== -->
-            <!-- Right side toggle and nav items -->
-            <!-- ============================================================== -->
-            <ul class="navbar-nav ml-auto d-flex align-items-center">
+<header class="cd-main-header js-cd-main-header">
+    <div class="cd-logo-wrapper">
+        <h4 class="text-center" style="font-weight: bold; color: white">Ponnobazar</h4>
+    </div>
 
-                <!-- ============================================================== -->
-                <!-- Search -->
-                <!-- ============================================================== -->
-                <li class=" in">
-                    <form role="search" class="app-search d-none d-md-block mr-10">
-                        <input type="text" placeholder="Search..." class="form-control mt-0">
-                        <a href="" class="active">
-                            <i class="fa fa-search"></i>
-                        </a>
+    <div class="cd-search js-cd-search">
+        <form>
+            <input class="reset" type="search" placeholder="Search...">
+        </form>
+    </div>
+
+    <button class="reset cd-nav-trigger js-cd-nav-trigger" aria-label="Toggle menu"><span></span></button>
+
+    <ul class="cd-nav__list js-cd-nav__list">
+{{--        <li class="cd-nav__item"><a href="#0">Tour</a></li>--}}
+{{--        <li class="cd-nav__item"><a href="#0">Support</a></li>--}}
+        <li class="cd-nav__item cd-nav__item--has-children cd-nav__item--account js-cd-item--has-children">
+            <a href="#0">
+                <i class="fa fa-user" style="padding-right: 5px"></i>
+                <span>Account</span>
+            </a>
+
+            <ul class="cd-nav__sub-list">
+                <li class="cd-nav__sub-item"><a href="{{route('user_profile')}}">Edit Profile</a></li>
+                <li class="cd-nav__sub-item">
+                    <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <button type="submit" style="background: none!important;
+                              border: none;
+                              padding: 0!important;
+                              text-decoration: none;
+                              /*optional*/
+                              font-family: arial, sans-serif;
+                              /*input has OS specific font-family*/
+                              color: #FFFFFF;
+                              cursor: pointer;">
+                            <a>Logout</a>
+                        </button>
                     </form>
                 </li>
-                <!-- ============================================================== -->
-                <!-- User profile and search -->
-                <!-- ============================================================== -->
-                <li>
-                    <a class="profile-pic dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user"></i><span class="text-white font-medium"> {{auth()->user()->first_name." ".auth()->user()->last_name}}</span>
-                    </a>
-                </li>
-                <!-- ============================================================== -->
-                <!-- User profile and search -->
-                <!-- ============================================================== -->
             </ul>
-        </div>
-    </nav>
-</header>
-<!-- ============================================================== -->
-<!-- End Topbar header -->
+        </li>
+    </ul>
+</header> <!-- .cd-main-header -->
