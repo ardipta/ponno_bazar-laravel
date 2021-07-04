@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="{{asset('assets/vendors/simple-datatables/style.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.css">
     <title>User Dashboard | Ponnobazar</title>
+    <style>
+        @media (max-width: 600px) {
+            .headName{
+                margin-left: 140px;
+            }
+        }
+    </style>
 </head>
 <body>
 @include('Users.partials.user_header')

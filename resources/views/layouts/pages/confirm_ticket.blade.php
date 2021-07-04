@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid confirmPage">
         <div class="row">
             <div class="col-md-12" style="margin: 20px">
                 <div class="form-row col-md-8">

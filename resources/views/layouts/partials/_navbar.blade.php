@@ -18,11 +18,49 @@
                         <ul class="nav navbar-nav">
                             <li><a href="{{route('index')}}">Home</a></li>
                             <li><a href="#">About</a></li>
-                            <li><a href="#">Travels</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Use</a></li>
+{{--                            <li><a href="#">Travels</a></li>--}}
+{{--                            <li><a href="#">Privacy Policy</a></li>--}}
+{{--                            <li><a href="#">Terms of Use</a></li>--}}
                             <li><a href="{{route('contact')}}">Contact Us</a></li>
                             <li>Need Help?<a href="#" data-toggle="modal" data-target="#myModal3"> / Write Us </a>  </li>
+                            @auth
+                                @if(auth()->user()->is_admin === 0)
+                                    <li><a style="text-decoration: none" href="{{route('users.dashboard')}}"><i class="fa fa-user-md"></i> Logged as {{auth()->user()->first_name." ".auth()->user()->last_name}}</a></li>
+                                    <li><a style="text-decoration: none" href="{{route('users.dashboard')}}"><i class="fa fa-dashboard"></i> User Dashboard</a></li>
+                                    <li>
+                                        <form action="{{route('logout')}}" method="POST">
+                                            @csrf
+                                            <button type="submit" style="background: none!important;
+                                              border: none;
+                                              padding: 0!important;
+                                              text-decoration: none;
+                                              margin-top: 6px;
+                                              cursor: pointer;">
+                                                <i class="fa fa-sign-out"></i> Logout
+                                            </button>
+                                        </form>
+                                    </li>
+                                @elseif(auth()->user()->is_admin === 1)
+                                    <li><a style="text-decoration: none" href="#"><i class="fa fa-user-md"></i> Logged as {{auth()->user()->first_name." ".auth()->user()->last_name}}</a></li>
+                                    <li><a style="text-decoration: none" href="{{route('dashboard')}}" >|Admin Dashboard</a></li>
+                                    <li>
+                                        <form action="{{route('logout')}}" method="POST">
+                                            @csrf
+                                            <button type="submit" style="background: none!important;
+                                              border: none;
+                                              text-decoration: none;
+                                              margin-top: 6px;
+                                              color: #FFFFFF;
+                                              cursor: pointer;">
+                                                <i class="fa fa-sign-out"></i> Logout
+                                            </button>
+                                        </form>
+                                    </li>
+                                @endif
+                            @endauth
+                            @guest
+                                <li><a style="text-decoration: none" href="#" data-toggle="modal" data-target="#loginModal" ><i class="fa fa-user-md"></i> Login</a></li>
+                            @endguest
                             <div class="clearfix"></div>
                         </ul>
                     </nav>

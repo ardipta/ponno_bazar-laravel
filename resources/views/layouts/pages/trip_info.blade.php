@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid infoPage">
         <div class="row">
             <div class="col-md-12" style="margin: 20px">
                 @foreach($trips as $trip)

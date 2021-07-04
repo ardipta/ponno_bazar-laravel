@@ -40,7 +40,7 @@
         </a>
     </div>
     <div class="container">
-        <div class="col-md-5 bann-info1 wow fadeInLeft animated" data-wow-delay=".5s">
+        <div class="col-md-5 col-xs-12 col-sm-12 bann-info1 wow fadeInLeft animated" data-wow-delay=".5s">
             <div class="col">
                 <div class="row">
                     <div class="col-lg-12">
@@ -91,7 +91,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-7 bann-info wow fadeInRight animated" data-wow-delay=".5s" id="busTicket">
+        <div class="col-md-7 col-xs-12 col-sm-12 bann-info wow fadeInRight animated" data-wow-delay=".5s" id="busTicket">
             <form action="{{ route('search_result') }}" method="GET">
                 {{ csrf_field() }}
                 <h2>Buy Ticket Now!!</h2>
@@ -210,7 +210,7 @@
 {{--    </div>--}}
     <!--- /track ---->
     <!--- routes ---->
-    <div class="routes" style="margin-bottom: 40px">
+    <div class="routes">
         <div class="container">
             <div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
                 <div class="rou-left">
@@ -247,83 +247,6 @@
     </div>
     <!--- /routes ---->
 
-    <!-- sign -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                </div>
-                <section>
-                    <div class="modal-body modal-spa">
-                        <div class="login-grids">
-                            <div class="login">
-                                <div class="login-left">
-                                    <ul>
-                                        <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
-                                        <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
-                                        <li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
-                                    </ul>
-                                </div>
-                                <div class="login-right">
-                                    <form>
-                                        <h3>Create your account </h3>
-                                        <input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-                                        <input type="text" value="Mobile number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Mobile number';}" required="">
-                                        <input type="text" value="Email id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email id';}" required="">
-                                        <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-                                        <input type="submit" value="CREATE ACCOUNT">
-                                    </form>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <p>By logging in you agree to our <a href="terms.html">Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a></p>
-                        </div>
-                    </div>
-                </section>
-            </div>
-        </div>
-    </div>
-    <!-- //sign -->
-    <!-- signin -->
-    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content modal-info">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                </div>
-                <div class="modal-body modal-spa">
-                    <div class="login-grids">
-                        <div class="login">
-                            <div class="login-left">
-                                <ul>
-                                    <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
-                                    <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
-                                    <li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
-                                </ul>
-                            </div>
-                            <div class="login-right">
-                                <form>
-                                    <h3>Signin with your account </h3>
-                                    <input type="text" value="Enter your mobile number or Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your mobile number or Email';}" required="">
-                                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required="">
-                                    <h4><a href="#">Forgot password</a></h4>
-                                    <div class="single-bottom">
-                                        <input type="checkbox" id="brand" value="">
-                                        <label for="brand"><span></span>Remember Me.</label>
-                                    </div>
-                                    <input type="submit" value="SIGNIN">
-                                </form>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>
-                        <p>By logging in you agree to our <a href="terms.html">Terms and Conditions</a> and <a href="privacy.html">Privacy Policy</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //signin -->
     <!-- write us -->
     <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">

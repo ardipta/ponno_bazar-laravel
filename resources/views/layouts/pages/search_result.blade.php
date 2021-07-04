@@ -13,7 +13,7 @@
             </div>
         </div>
     </div>
-    <section class="section" style="padding: 40px">
+    <section class="section searchPage">
         <div class="card">
             <div class="card-header text-center" style="padding: 20px">
                 <h2 style="font-weight: bolder">{{$key_from}} - {{$key_to}}</h2>

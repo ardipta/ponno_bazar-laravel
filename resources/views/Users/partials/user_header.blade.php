@@ -1,6 +1,6 @@
 <header class="cd-main-header js-cd-main-header">
     <div class="cd-logo-wrapper">
-        <h4 class="text-center" style="font-weight: bold; color: white">Ponnobazar</h4>
+        <a href="{{route('index')}}"><h4 class="text-center headName" style="font-weight: bold; color: white">Ponnobazar</h4></a>
     </div>
 
     <div class="cd-search js-cd-search">
