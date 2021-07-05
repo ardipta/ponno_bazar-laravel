@@ -136,116 +136,493 @@
         </div>
         <div class="clearfix"></div>
     </div>
-    <!--- /banner ---->
-    <!--- rupes ---->
-    <div class="container">
-        <div class="rupes">
-            <div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-                <div class="rup-left">
-                    <a href="offers.html"><i class="fa fa-usd"></i></a>
-                </div>
-                <div class="rup-rgt">
-                    <h3>UP TO USD. 50 OFF</h3>
-                    <h4><a href="offers.html">TRAVEL SMART</a></h4>
-                    <p>CODE:YBMAR12<br>Book Using Pay Money</p>
-                </div>
-                <div class="clearfix"></div>
+
+    <div class="container" style="margin-bottom: 10px">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
+                <div class="blog-card spring-fever">
+                    <div class="title-content">
+                        <h3><a href="#">Men's Fashion</a></h3>
+                        <div class="intro"> <a href="#">Category</a> </div>
+                    </div>
+                    <div class="color-overlay"></div>
+                </div><!-- /.blog-card -->
             </div>
-            <div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-                <div class="rup-left">
-                    <a href="offers.html"><i class="fa fa-h-square"></i></a>
-                </div>
-                <div class="rup-rgt">
-                    <h3>UP TO 70% OFF</h3>
-                    <h4><a href="offers.html">ON HOTELS ACROSS WORLD</a></h4>
-                    <p>Offer CODE:YBMAR12</p>
-                </div>
-                <div class="clearfix"></div>
+            <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
+                <div class="blog-card spring-fever">
+                    <div class="title-content">
+                        <h3><a href="#">Woman's Fashion</a></h3>
+                        <div class="intro"> <a href="#">Category</a> </div>
+                    </div>
+                    <div class="color-overlay"></div>
+                </div><!-- /.blog-card -->
             </div>
-            <div class="col-md-4 rupes-left wow fadeInDown animated animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInDown;">
-                <div class="rup-left">
-                    <a href="offers.html"><i class="fa fa-mobile"></i></a>
-                </div>
-                <div class="rup-rgt">
-                    <h3>FLAT USD. 50 OFF</h3>
-                    <h4><a href="offers.html">BUS APP OFFER</a></h4>
-                    <p>book via the yellow Bus App<br>CODE:YBMAR12</p>
-                </div>
-                <div class="clearfix"></div>
+            <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
+                <div class="blog-card spring-fever">
+                    <div class="title-content">
+                        <h3><a href="#">Grocery & Food</a></h3>
+                        <div class="intro"> <a href="#">Category</a> </div>
+                    </div>
+                    <div class="color-overlay"></div>
+                </div><!-- /.blog-card -->
             </div>
-            <div class="clearfix"></div>
+            <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
+                <div class="blog-card spring-fever">
+                    <div class="title-content">
+                        <h3><a href="#">Electronics</a></h3>
+                        <div class="intro"> <a href="#">Category</a> </div>
+                    </div>
+                    <div class="color-overlay"></div>
+                </div><!-- /.blog-card -->
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
+                <div class="blog-card spring-fever">
+                    <div class="title-content">
+                        <h3><a href="#">Gadgets</a></h3>
+                        <div class="intro"> <a href="#">Category</a> </div>
+                    </div>
+                    <div class="color-overlay"></div>
+                </div><!-- /.blog-card -->
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
+                <div class="blog-card spring-fever">
+                    <div class="title-content">
+                        <h3><a href="#">Automobile</a></h3>
+                        <div class="intro"> <a href="#">Category</a> </div>
+                    </div>
+                    <div class="color-overlay"></div>
+                </div><!-- /.blog-card -->
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
+                <div class="blog-card spring-fever">
+                    <div class="title-content">
+                        <h3><a href="#">Kids Item</a></h3>
+                        <div class="intro"> <a href="#">Category</a> </div>
+                    </div>
+                    <div class="color-overlay"></div>
+                </div><!-- /.blog-card -->
+            </div>
+            <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
+                <div class="blog-card spring-fever">
+                    <div class="title-content">
+                        <h3><a href="#">Pet Food</a></h3>
+                        <div class="intro"> <a href="#">Category</a> </div>
+                    </div>
+                    <div class="color-overlay"></div>
+                </div><!-- /.blog-card -->
+            </div>
         </div>
     </div>
-    <!--- /rupes ---->
-    <!---holiday---->
-    <div class="container">
-        <div class="holiday">
-            <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-                <img src="images/4.jpg" class="img-responsive" alt="">
+
+    <div class="container bootdey">
+        <div class="col-md-3">
+            <section class="panel">
+                <div class="panel-body">
+                    <input type="text" placeholder="Keyword Search" class="form-control" />
+                </div>
+            </section>
+            <section class="panel">
+                <header class="panel-heading">
+                    Category
+                </header>
+                <div class="panel-body">
+                    <ul class="nav prod-cat">
+                        <li>
+                            <a href="#" class="active"><i class="fa fa-angle-right"></i> Dress</a>
+                            <ul class="nav">
+                                <li class="active"><a href="#">- Shirt</a></li>
+                                <li><a href="#">- Pant</a></li>
+                                <li><a href="#">- Shoes</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Bags &amp; Purses</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Beauty</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Coat &amp; Jacket</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Jeans</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Jewellery</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Electronics</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Sports</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Technology</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Watches</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-angle-right"></i> Accessories</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="panel">
+                <header class="panel-heading">
+                    Price Range
+                </header>
+                <div class="panel-body sliders">
+                    <div id="slider-range" class="slider"></div>
+                    <div class="slider-info">
+                        <span id="slider-range-amount"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="panel">
+                <header class="panel-heading">
+                    Filter
+                </header>
+                <div class="panel-body">
+                    <form role="form product-form">
+                        <div class="form-group">
+                            <label>Brand</label>
+                            <select class="form-control hasCustomSelect" style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
+                                <option>Wallmart</option>
+                                <option>Catseye</option>
+                                <option>Moonsoon</option>
+                                <option>Textmart</option>
+                            </select>
+                            <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner" style="width: 209px; display: inline-block;">Wallmart</span></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Color</label>
+                            <select class="form-control hasCustomSelect" style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
+                                <option>White</option>
+                                <option>Black</option>
+                                <option>Red</option>
+                                <option>Green</option>
+                            </select>
+                            <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner" style="width: 209px; display: inline-block;">White</span></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <select class="form-control hasCustomSelect" style="-webkit-appearance: menulist-button; width: 231px; position: absolute; opacity: 0; height: 34px; font-size: 12px;">
+                                <option>Small</option>
+                                <option>Medium</option>
+                                <option>Large</option>
+                                <option>Extra Large</option>
+                            </select>
+                            <span class="customSelect form-control" style="display: inline-block;"><span class="customSelectInner" style="width: 209px; display: inline-block;">Small</span></span>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Filter</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-9">
+            <section class="panel">
+                <div class="panel-body">
+                    <div class="pull-right">
+                        <ul class="pagination pagination-sm pro-page-list">
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="row product-list">
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/FFB6C1/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/6495ED/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/FF7F50/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/00BFFF/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/00CED1/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/9400D3/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/FFD700/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/ADD8E6/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/20B2AA/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/3CB371/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/FFB6C1/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/C71585/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/191970/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/87CEEB/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-lg-3 col-sm-6 col-xs-6">
+                    <section class="panel">
+                        <div class="pro-img-box">
+                            <img src="https://via.placeholder.com/250x220/FFB6C1/000000" alt="" />
+                            <a href="#" class="adtocart">
+                                <i class="fa fa-shopping-cart"></i>
+                            </a>
+                        </div>
+
+                        <div class="panel-body text-center">
+                            <h4>
+                                <a href="#" class="pro-title">
+                                    Coming Soon..
+                                </a>
+                            </h4>
+                            <p class="price">৳300.00</p>
+                        </div>
+                    </section>
+                </div>
             </div>
-            <div class="col-md-6 holiday-mid animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-                <h3>Travel Holiday Packages</h3>
-                <p>Private Guide and Driver in any language and in any departure date. For more information please contact us....</p>
-            </div>
-            <div class="col-md-3 holiday-left animated wow fadeInUp animated" data-wow-duration="1200ms" data-wow-delay="500ms" style="visibility: visible; animation-duration: 1200ms; animation-delay: 500ms; animation-name: fadeInUp;">
-                <img src="images/5.jpg" class="img-responsive" alt="">
-            </div>
-            <div class="clearfix"></div>
         </div>
     </div>
-    <!---/holiday---->
-    <!---track---->
-    {{--    <div class="container">--}}
-    {{--        <div class="track">--}}
-    {{--            <div class="col-md-6 track-right wow fadeInLeft animated" data-wow-delay=".5s">--}}
-    {{--                <a href="track.html"><img src="images/map1.png" class="img-responsive" alt=""></a>--}}
-    {{--            </div>--}}
-    {{--            <div class="col-md-6 track-left wow fadeInRight animated" data-wow-delay=".5s">--}}
-    {{--                <h3>TRACK MY BUS</h3>--}}
-    {{--                <p>First of its own kind,bus tracking feature on bus</p>--}}
-    {{--                <a href="track.html" class="learn">Learn More</a>--}}
-    {{--            </div>--}}
-    {{--            <div class="clearfix"></div>--}}
-    {{--        </div>--}}
-    {{--    </div>--}}
-    <!--- /track ---->
-    <!--- routes ---->
-    <div class="routes">
-        <div class="container">
-            <div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
-                <div class="rou-left">
-                    <a href="#"><i class="fa fa-truck"></i></a>
-                </div>
-                <div class="rou-rgt wow fadeInDown animated" data-wow-delay=".5s">
-                    <h3>80000</h3>
-                    <p>ROUTES</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-md-4 routes-left">
-                <div class="rou-left">
-                    <a href="#"><i class="fa fa-user"></i></a>
-                </div>
-                <div class="rou-rgt">
-                    <h3>1900</h3>
-                    <p>BUS OPERATORS</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="col-md-4 routes-left wow fadeInRight animated" data-wow-delay=".5s">
-                <div class="rou-left">
-                    <a href="#"><i class="fa fa-ticket"></i></a>
-                </div>
-                <div class="rou-rgt">
-                    <h3>7,00,00,000+</h3>
-                    <p>TICKETS SOLD</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    <!--- /routes ---->
 
     <!-- write us -->
     <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

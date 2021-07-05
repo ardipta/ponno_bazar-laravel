@@ -18,6 +18,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!--animate-->
     <link href="{{asset('css/animate.css')}}" rel="stylesheet" type="text/css" media="all">
+    <link href="{{asset('css/product_listing.css')}}" rel="stylesheet" type="text/css" media="all">
     <link href="{{asset('css/breadcumbs.css')}}" rel="stylesheet" type="text/css" media="all">
     <script src="{{asset('js/wow.min.js')}}"></script>
     <link rel="stylesheet" href="{{asset('assets/vendors/simple-datatables/style.css')}}">
