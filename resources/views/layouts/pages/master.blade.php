@@ -24,34 +24,6 @@
     <script>
         new WOW().init();
     </script>
-    <style>
-        @media (max-width: 600px) {
-            .routes{
-                margin-bottom: 100px;
-            }
-            .searchPage{
-                margin-bottom: 100px;
-            }
-            .infoPage{
-                margin-bottom: 125px;
-            }
-            .confirmPage{
-                margin-bottom: 125px;
-            }
-            .confirmPage{
-                margin-bottom: 160px;
-            }
-        }
-        @media (min-width: 601px) {
-            .routes{
-                margin-bottom: 40px;
-            }
-            .searchPage{
-                margin-bottom: 40px;
-            }
-        }
-    </style>
-    <!--//end-animate-->
 </head>
 <body>
     @include('layouts.partials._topbar')

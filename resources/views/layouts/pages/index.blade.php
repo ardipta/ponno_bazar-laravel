@@ -55,13 +55,13 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner" role="listbox">
                                 <div class="item active">
-                                    <img src="{{asset('images/inside_bus.webp')}}" class="img-thumbnail" style="height: 180px; max-width: 100%">
+                                    <img src="{{asset('images/inside_bus.webp')}}" style="height: 180px; max-width: 100%">
                                 </div>
                                 <div class="item">
-                                    <img src="{{asset('images/inside_bus2.webp')}}" class="img-thumbnail" style="height: 180px; max-width: 100%">
+                                    <img src="{{asset('images/inside_bus2.webp')}}" style="height: 180px; max-width: 100%">
                                 </div>
                                 <div class="item">
-                                    <img src="{{asset('images/inside_bus3.webp')}}" class="img-thumbnail" style="height: 180px; max-width: 100%">
+                                    <img src="{{asset('images/inside_bus3.webp')}}" style="height: 180px; max-width: 100%">
                                 </div>
                             </div>
 
@@ -75,10 +75,10 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-{{--                        <img src="{{asset('images/inside_bus.webp')}}" class="img-thumbnail" style="height: 180px; max-width: 100%; border-radius: 5px; padding: 5px; margin-bottom: 5px">--}}
+                        {{--                        <img src="{{asset('images/inside_bus.webp')}}" class="img-thumbnail" style="height: 180px; max-width: 100%; border-radius: 5px; padding: 5px; margin-bottom: 5px">--}}
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-top:10px">
                     <div class="col-lg-4 col-xs-4">
                         <img src="{{asset('images/inside_bus.webp')}}" class="img-thumbnail" style="height: 80px; max-width: 100%; padding: 5px; border-radius: 5px">
                     </div>
@@ -86,7 +86,7 @@
                         <img src="{{asset('images/inside_bus2.webp')}}" class="img-thumbnail" style="height: 80px; max-width: 100%; padding: 5px; border-radius: 5px">
                     </div>
                     <div class="col-lg-4 col-xs-4">
-                        <img src="{{asset('images/inside_bus3.webp')}}" class="img-thumbnail" style="height: 80px; max-width: 100%; padding: 5px; border-radius: 5px">
+                        <img src="{{asset('images/inside_bus3.webp')}}" class="img-thumbnail"  style="height: 80px; max-width: 100%; padding: 5px; border-radius: 5px">
                     </div>
                 </div>
             </div>
@@ -119,11 +119,11 @@
                 <div class="ban-bottom">
                     <div class="bnr-right">
                         <label class="inputLabel">Date of Journey</label>
-                        <input  type="date" name="date_range_from" style="width: 95%;color: #9E9E9E;outline: none;font-size: 14px;padding: 3px 10px;border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px;">
+                        <input type="date" name="date_range_from" placeholder="Select Date" style="width: 95%;color: #9E9E9E;font-size: 14px;padding: 3px 10px;border: 1px solid #9E9E9E;margin-top: 10px;">
                     </div>
                     <div class="bnr-right">
                         <label class="inputLabel">Date of Return<span class="opt">&nbsp;(Optional)</span></label>
-                        <input  type="date" style="width: 95%;color: #9E9E9E;outline: none;font-size: 14px;padding: 3px 10px;border: 1px solid #9E9E9E;-webkit-appearance: none;margin-top: 10px;">
+                        <input type="date" style="width: 95%;color: #9E9E9E;font-size: 14px;padding: 3px 10px;border: 1px solid #9E9E9E;margin-top: 10px;">
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -195,19 +195,19 @@
     </div>
     <!---/holiday---->
     <!---track---->
-{{--    <div class="container">--}}
-{{--        <div class="track">--}}
-{{--            <div class="col-md-6 track-right wow fadeInLeft animated" data-wow-delay=".5s">--}}
-{{--                <a href="track.html"><img src="images/map1.png" class="img-responsive" alt=""></a>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 track-left wow fadeInRight animated" data-wow-delay=".5s">--}}
-{{--                <h3>TRACK MY BUS</h3>--}}
-{{--                <p>First of its own kind,bus tracking feature on bus</p>--}}
-{{--                <a href="track.html" class="learn">Learn More</a>--}}
-{{--            </div>--}}
-{{--            <div class="clearfix"></div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
+    {{--    <div class="container">--}}
+    {{--        <div class="track">--}}
+    {{--            <div class="col-md-6 track-right wow fadeInLeft animated" data-wow-delay=".5s">--}}
+    {{--                <a href="track.html"><img src="images/map1.png" class="img-responsive" alt=""></a>--}}
+    {{--            </div>--}}
+    {{--            <div class="col-md-6 track-left wow fadeInRight animated" data-wow-delay=".5s">--}}
+    {{--                <h3>TRACK MY BUS</h3>--}}
+    {{--                <p>First of its own kind,bus tracking feature on bus</p>--}}
+    {{--                <a href="track.html" class="learn">Learn More</a>--}}
+    {{--            </div>--}}
+    {{--            <div class="clearfix"></div>--}}
+    {{--        </div>--}}
+    {{--    </div>--}}
     <!--- /track ---->
     <!--- routes ---->
     <div class="routes">

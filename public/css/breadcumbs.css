@@ -54,8 +54,9 @@
         padding-left: 0
     }
 
-    .fa {
-        font-size: 9px !important
+    .fa-caret-right,
+    .fa-angle-double-right {
+        font-size: 15px !important
     }
 
     .breadcrumb {
