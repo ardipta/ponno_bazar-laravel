@@ -140,7 +140,7 @@
     <div class="container" style="margin-bottom: 10px">
         <div class="row">
             <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
-                <div class="blog-card spring-fever">
+                <div class="blog-card spring-fever" style="background: url(images/man.webp) center no-repeat;background-size: 100%;">
                     <div class="title-content">
                         <h3><a href="#">Men's Fashion</a></h3>
                         <div class="intro"> <a href="#">Category</a> </div>
@@ -149,7 +149,7 @@
                 </div><!-- /.blog-card -->
             </div>
             <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
-                <div class="blog-card spring-fever">
+                <div class="blog-card spring-fever" style="background: url(images/woman.webp) center no-repeat;background-size: 100%;">
                     <div class="title-content">
                         <h3><a href="#">Woman's Fashion</a></h3>
                         <div class="intro"> <a href="#">Category</a> </div>
@@ -158,7 +158,7 @@
                 </div><!-- /.blog-card -->
             </div>
             <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
-                <div class="blog-card spring-fever">
+                <div class="blog-card spring-fever" style="background: url(images/grocery.webp) center no-repeat;background-size: 100%;">
                     <div class="title-content">
                         <h3><a href="#">Grocery & Food</a></h3>
                         <div class="intro"> <a href="#">Category</a> </div>
@@ -167,7 +167,7 @@
                 </div><!-- /.blog-card -->
             </div>
             <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
-                <div class="blog-card spring-fever">
+                <div class="blog-card spring-fever" style="background: url(images/electronics.webp) center no-repeat;background-size: 100%;">
                     <div class="title-content">
                         <h3><a href="#">Electronics</a></h3>
                         <div class="intro"> <a href="#">Category</a> </div>
@@ -176,7 +176,7 @@
                 </div><!-- /.blog-card -->
             </div>
             <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
-                <div class="blog-card spring-fever">
+                <div class="blog-card spring-fever" style="background: url(images/gadget.webp) center no-repeat;background-size: 100%;">
                     <div class="title-content">
                         <h3><a href="#">Gadgets</a></h3>
                         <div class="intro"> <a href="#">Category</a> </div>
@@ -185,7 +185,7 @@
                 </div><!-- /.blog-card -->
             </div>
             <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
-                <div class="blog-card spring-fever">
+                <div class="blog-card spring-fever" style="background: url(images/automobile.webp) center no-repeat;background-size: 100%;">
                     <div class="title-content">
                         <h3><a href="#">Automobile</a></h3>
                         <div class="intro"> <a href="#">Category</a> </div>
@@ -194,7 +194,7 @@
                 </div><!-- /.blog-card -->
             </div>
             <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
-                <div class="blog-card spring-fever">
+                <div class="blog-card spring-fever" style="background: url(images/kids.webp) center no-repeat;background-size: 100%;">
                     <div class="title-content">
                         <h3><a href="#">Kids Item</a></h3>
                         <div class="intro"> <a href="#">Category</a> </div>
@@ -203,7 +203,7 @@
                 </div><!-- /.blog-card -->
             </div>
             <div class="col-lg-3 col-sm-6 col-xs-6" style="padding: 20px">
-                <div class="blog-card spring-fever">
+                <div class="blog-card spring-fever" style="background: url(images/pet.webp) center no-repeat;background-size: 100%;">
                     <div class="title-content">
                         <h3><a href="#">Pet Food</a></h3>
                         <div class="intro"> <a href="#">Category</a> </div>
@@ -338,7 +338,7 @@
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/FFB6C1/000000" alt="" />
+                            <img src="{{asset('images/p1.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -350,14 +350,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/6495ED/000000" alt="" />
+                            <img src="{{asset('images/p2.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -369,14 +369,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/FF7F50/000000" alt="" />
+                            <img src="{{asset('images/p3.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -388,14 +388,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/00BFFF/000000" alt="" />
+                            <img src="{{asset('images/p4.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -407,14 +407,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/00CED1/000000" alt="" />
+                            <img src="{{asset('images/p5.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -426,14 +426,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/9400D3/000000" alt="" />
+                            <img src="{{asset('images/p6.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -445,14 +445,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/FFD700/000000" alt="" />
+                            <img src="{{asset('images/p7.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -464,14 +464,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/ADD8E6/000000" alt="" />
+                            <img src="{{asset('images/p8.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -483,14 +483,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/20B2AA/000000" alt="" />
+                            <img src="{{asset('images/p9.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -502,14 +502,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/3CB371/000000" alt="" />
+                            <img src="{{asset('images/p10.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -521,14 +521,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/FFB6C1/000000" alt="" />
+                            <img src="{{asset('images/p11.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -540,14 +540,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/C71585/000000" alt="" />
+                            <img src="{{asset('images/p12.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -559,14 +559,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/191970/000000" alt="" />
+                            <img src="{{asset('images/p13.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -578,14 +578,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/87CEEB/000000" alt="" />
+                            <img src="{{asset('images/p14.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -597,14 +597,14 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
                 <div class="col-lg-3 col-sm-6 col-xs-6">
                     <section class="panel">
                         <div class="pro-img-box">
-                            <img src="https://via.placeholder.com/250x220/FFB6C1/000000" alt="" />
+                            <img src="{{asset('images/p15.webp')}}" alt="" />
                             <a href="#" class="adtocart">
                                 <i class="fa fa-shopping-cart"></i>
                             </a>
@@ -616,7 +616,7 @@
                                     Coming Soon..
                                 </a>
                             </h4>
-                            <p class="price">৳300.00</p>
+                            <p class="price">৳0.00</p>
                         </div>
                     </section>
                 </div>
