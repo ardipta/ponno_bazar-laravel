@@ -1,6 +1,7 @@
 @extends('Admin.master')
 @section('content')
     <div class="main-content container-fluid">
+        @include('partials.flash_message')
         <div class="page-title">
             <h3>Dashboard</h3>
             <p class="text-subtitle text-muted">A good dashboard to display your statistics</p>
@@ -95,6 +96,7 @@
                     <table class='table table-striped' id="table1">
                         <thead>
                         <tr>
+                            <th>ID</th>
                             <th>From</th>
                             <th>To</th>
                             <th>Route</th>
@@ -109,11 +111,13 @@
                             <th>Total Seat</th>
                             <th>Fare</th>
                             <th>Image</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($bus_info as $bus)
                             <tr>
+                                <td>{{$bus->id}}</td>
                                 <td>{{$bus->from}}</td>
                                 <td>{{$bus->to}}</td>
                                 <td>{{$bus->route}}</td>
@@ -126,12 +130,24 @@
                                 <td>{{$bus->date_range_from}}</td>
                                 <td>{{$bus->date_range_to}}</td>
                                 <td>{{$bus->total_seat}}</td>
-                                <td>{{$bus->fare}} ৳</td>
+                                <td>{{$bus->fare}}</td>
                                 @if($bus->bus_image)
                                     <td><img src="{{asset("uploads/bus_images/{$bus->bus_image}")}}" class="img-fluid" style="max-width: 100%; height: 50px"></td>
                                 @else
                                     <td><img src="{{asset("images/bus_demo.png")}}" class="img-fluid" style="max-width: 100%; height: 50px"></td>
                                 @endif
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="submit" title="Update/Edit" id="edit" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-edit"></i></button>
+                                    </div>
+                                    <div class="btn-group">
+                                        <form action="" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="deleteID" value="{{$bus->id}}">
+                                            <button title="Delete" type="submit" class="btn"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -139,5 +155,119 @@
                 </div>
             </div>
         </section>
+    </div>
+    <div class="modal fade bd-example-modal-lg" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Info</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/admin/add_bus_service" method="POST" id="editForm" enctype="multipart/form-data">
+                    {{csrf_field()}}
+                    {{method_field('PUT')}}
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>From</label>
+                                    <input type="text" name="edit_from" class="form-control" id="edit_from" style="border-radius: 5px" value="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>To</label>
+                                    <input type="text" class="form-control" name="edit_to" id="edit_to" style="border-radius: 5px" value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Route</label>
+                                    <input type="text" class="form-control" name="edit_route" id="edit_route" style="border-radius: 5px" value="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Bus Service Name</label>
+                                    <input type="text" class="form-control"  id="edit_bus_service_name" name="edit_bus_service_name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Bus Type</label>
+                                    <input type="text" class="form-control" name="edit_bus_type" id="edit_bus_type" style="border-radius: 5px" value="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Bus Number</label>
+                                    <input type="text" class="form-control"  id="edit_bus_number" style="border-radius: 5px" name="edit_bus_number">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Bus Model</label>
+                                    <input type="text" class="form-control" name="edit_bus_model" id="edit_bus_model" style="border-radius: 5px" value="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Departure Time</label>
+                                    <input type="text" class="form-control"  id="edit_departure_time" style="border-radius: 5px" name="edit_departure_time">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Arrival Time</label>
+                                    <input type="text" class="form-control" name="edit_arrival_time" id="edit_arrival_time" style="border-radius: 5px" value="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Date Range From</label>
+                                    <input type="text" class="form-control"  id="edit_date_from" style="border-radius: 5px" name="edit_date_from">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Date Range To</label>
+                                    <input type="text" class="form-control" name="edit_date_to" id="edit_date_to" style="border-radius: 5px" value="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Total Seat</label>
+                                    <input type="text" class="form-control"  id="edit_total_seat" style="border-radius: 5px" name="edit_total_seat">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Seat Fare</label>
+                                    <input type="text" class="form-control" name="edit_seat_fare" id="edit_seat_fare" style="border-radius: 5px" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 @endsection

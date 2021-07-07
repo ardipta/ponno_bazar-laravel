@@ -16,6 +16,7 @@
     <link href="{{asset('css/font-awesome.css')}}" rel="stylesheet">
     <!-- Custom Theme files -->
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <link rel="shortcut icon" href="{{asset('images/logo1.webp')}}" type="image/x-icon">
     <!--animate-->
     <link href="{{asset('css/animate.css')}}" rel="stylesheet" type="text/css" media="all">
     <link href="{{asset('css/product_listing.css')}}" rel="stylesheet" type="text/css" media="all">

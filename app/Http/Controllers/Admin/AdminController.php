@@ -108,4 +108,26 @@ class AdminController extends Controller
             return redirect()->back()->with('error', 'Something went wrong');
         }
     }
+
+    public function update(Request $request, $id){
+        $bus_id = Bus_service::find($id);
+
+        $bus_id->from = $request->input('edit_from');
+        $bus_id->to = $request->input('edit_to');
+        $bus_id->route = $request->input('edit_route');
+        $bus_id->bus_service_name = $request->input('edit_bus_service_name');
+        $bus_id->bus_type = $request->input('edit_bus_type');
+        $bus_id->bus_number = $request->input('edit_bus_number');
+        $bus_id->bus_model = $request->input('edit_bus_model');
+        $bus_id->departure_time = $request->input('edit_departure_time');
+        $bus_id->arrival_time = $request->input('edit_arrival_time');
+        $bus_id->date_range_from = $request->input('edit_date_from');
+        $bus_id->date_range_to = $request->input('edit_date_to');
+        $bus_id->total_seat = $request->input('edit_total_seat');
+        $bus_id->fare = $request->input('edit_seat_fare');
+        $bus_id->save();
+
+        return redirect()->back()->with('success', 'Information updated successful');
+
+    }
 }

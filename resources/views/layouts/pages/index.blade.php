@@ -95,36 +95,42 @@
             <form action="{{ route('search_result') }}" method="GET">
                 {{ csrf_field() }}
                 <h2>Buy Ticket Now!!</h2>
-                <div class="ban-top">
-                    <div class="bnr-left">
-                        <label class="inputLabel">From</label>
-                        <input class="city" type="text" placeholder="Enter a city" name="from" list="from" autocomplete="off" required=>
-                        <datalist class="form-control" id="from" style="display: none" >
-                            @foreach ($buses_from as $bus)
-                                <option value="{{$bus->from}}"></option>
-                            @endforeach
-                        </datalist>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="inputLabel" for="from">From</label>
+                            <select class="form-control" id="from" name="from">
+                                <option value="default">--Select From Point--</option>
+                                @foreach ($buses_from as $bus)
+                                    <option value="{{$bus->from}}">{{$bus->from}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
-                    <div class="bnr-left">
-                        <label class="inputLabel">To</label>
-                        <input class="city" type="text" placeholder="Enter a city" name="to" list="to" autocomplete="off" required=>
-                        <datalist class="form-control" id="to" style="display: none" >
-                            @foreach ($buses_to as $bus_to)
-                                <option value="{{$bus_to->to}}"></option>
-                            @endforeach
-                        </datalist>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="inputLabel" for="to">To</label>
+                            <select class="form-control" id="to" name="to">
+                                <option value="default">--Select To Point--</option>
+                                @foreach ($buses_to as $bus_to)
+                                    <option value="{{$bus_to->to}}">{{$bus_to->to}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <div class="clearfix"></div>
                 </div>
-                <div class="ban-bottom">
-                    <div class="bnr-right">
-                        <label class="inputLabel">Date of Journey</label>
-                        <input type="date" name="date_range_from" placeholder="Select Date" style="width: 95%;color: #9E9E9E;font-size: 14px;padding: 3px 10px;border: 1px solid #9E9E9E;margin-top: 10px;">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label class="inputLabel" for="dateRangeFrom">Date of Journey</label>
+                            <input type="date" name="date_range_from" class="form-control" id="dateRangeFrom">
+                        </div>
                     </div>
-                    <div class="bnr-right">
-                        <label class="inputLabel">Date of Return<span class="opt">&nbsp;(Optional)</span></label>
-                        <input type="date" style="width: 95%;color: #9E9E9E;font-size: 14px;padding: 3px 10px;border: 1px solid #9E9E9E;margin-top: 10px;">
-                    </div>
+{{--                    <div class="col-lg-6">--}}
+{{--                        <label class="inputLabel">Date of Return<span class="opt">&nbsp;(Optional)</span></label>--}}
+{{--                        <input type="date" >--}}
+{{--                    </div>--}}
                     <div class="clearfix"></div>
                 </div>
                 <div class="sear">
