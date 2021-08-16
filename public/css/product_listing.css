@@ -158,11 +158,13 @@
 
 
 .shopping-cart {
-    margin: 20px 0;
+    position: absolute;
+    right: 284px;
+    top: 107px;
+    z-index: 1000;
     float: right;
     background: white;
     width: 320px;
-    position: relative;
     border-radius: 3px;
     padding: 20px;
 }
@@ -182,6 +184,7 @@
 
 li {
     margin-bottom: 18px;
+    list-style: none;
 }
 
 img {
