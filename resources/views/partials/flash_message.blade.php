@@ -1,18 +1,18 @@
 @if ($message = Session::get('success'))
     <div class="alert alert-success alert-block">
-        <strong>{{ $message }}</strong>
+        <i class="fa fa-check-circle"></i><strong> {{ $message }}</strong>
     </div>
 @endif
 
 @if ($message = Session::get('error'))
     <div class="alert alert-danger alert-block">
-        <strong>{{ $message }}</strong>
+        <i class="fa fa-exclamation-triangle"></i><strong> {{ $message }}</strong>
     </div>
 @endif
 
 @if ($message = Session::get('warning'))
     <div class="alert alert-warning alert-block">
-        <strong>{{ $message }}</strong>
+        <i class="fa fa-exclamation-triangle"></i> <strong>{{ $message }}</strong>
     </div>
 @endif
 
@@ -24,6 +24,6 @@
 
 @if ($errors->any())
     <div class="alert alert-danger">
-        Check the following errors below!!
+        <i class="fa fa-exclamation-triangle"></i>Check the following errors below!!
     </div>
 @endif

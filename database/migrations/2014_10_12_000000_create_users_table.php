@@ -20,7 +20,6 @@ class CreateUsersTable extends Migration
             $table->string('gender')->nullable();
             $table->string('phone')->unique();
             $table->string('date_of_birth')->nullable();
-            $table->boolean('is_admin')->nullable();
             $table->string('password')->nullable();
             $table->string('image')->nullable();  //php artisan migrate:refresh --path=/database/migrations/fileName.php
             $table->rememberToken();

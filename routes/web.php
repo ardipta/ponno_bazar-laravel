@@ -1,5 +1,11 @@
 <?php
 
+use App\Http\Controllers\Auth\Admin\AdminAuthController;
+use App\Http\Controllers\Auth\User\UserAuthController;
+use App\Http\Controllers\Backend\BackPagesController;
+use App\Http\Controllers\Frontend\BusTicketController;
+use App\Http\Controllers\Frontend\FrontPagesController;
+use App\Http\Controllers\Frontend\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,32 +18,57 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/*
+|--------------------------------------------------------------------------
+| Front Page Routes
+|--------------------------------------------------------------------------
+*/
+Route::get('/', [FrontPagesController::class, 'index'])->name('index');
+Route::get('/contact', [FrontPagesController::class, 'contact'])->name('contact');
+Route::get('/search_result', [BusTicketController::class, 'search_result'])->name('search_result');
+Route::get('/bus_ticket/trip_info', [BusTicketController::class, 'trip_info'])->name('trip_info');
+Route::get('/bus_ticket/trip_info/confirm_ticket', [BusTicketController::class, 'confirm_ticket'])->name('confirm_ticket');
+Route::post('/bus_ticket/trip_info/confirm_ticket', [BusTicketController::class, 'save_ticket_info'])->name('save_ticket_info')->middleware('auth');;
 
-Route::get('/', 'App\Http\Controllers\Pages\PagesController@index')->name('index');
-Route::get('/contact', 'App\Http\Controllers\Pages\PagesController@contact')->name('contact');
 
-//Authentication
-Route::get('/admin/login','App\Http\Controllers\Auth\AuthController@admin_login')->name('admin_login');
-Route::post('/admin/login','App\Http\Controllers\Auth\AuthController@admin_login_process')->name('admin_login.post');
-Route::post('/login','App\Http\Controllers\Auth\AuthController@process_login')->name('login.post');
-Route::get('/register/complete_registration','App\Http\Controllers\Auth\AuthController@complete_register')->name('complete_register');
-Route::post('/register/complete_registration','App\Http\Controllers\Auth\AuthController@process_signup')->name('register.post');;
-Route::post('/logout','App\Http\Controllers\Auth\AuthController@logout')->name('logout');
+/*
+|--------------------------------------------------------------------------
+| auth Routes
+|--------------------------------------------------------------------------
+*/
+Route::group(['prefix' => '/auth'], function(){
+    Route::get('/admin/login',[AdminAuthController::class, 'admin_login'])->name('admin_login');
+    Route::post('/admin/login',[AdminAuthController::class, 'admin_login_process'])->name('admin_login.post');
+    Route::post('admin/logout',[AdminAuthController::class, 'admin_logout'])->name('admin_logout');
+    Route::post('/login',[UserAuthController::class, 'process_login'])->name('login.post');
+    Route::get('/register/complete_registration',[UserAuthController::class, 'complete_register'])->name('complete_register');
+    Route::post('/register/complete_registration',[UserAuthController::class, 'process_signup'])->name('register.post');;
+    Route::post('/logout',[UserAuthController::class, 'logout'])->name('logout');
 
-// Admin Panel
-Route::get('/admin/dashboard','App\Http\Controllers\Admin\AdminController@dashboard')->name('dashboard')->middleware('admin');
-Route::get('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController@add_bus_service')->name('add_bus_service')->middleware('admin');
-Route::resource('/admin/bus_service_update','App\Http\Controllers\Admin\AdminController')->middleware('admin');
-Route::post('/admin/add_bus_service','App\Http\Controllers\Admin\AdminController@save_bus_info')->name('save_bus_info')->middleware('admin');
-
-//Bus Search
-Route::get('/search_result', 'App\Http\Controllers\BusTicketController@search_result')->name('search_result');
-
-Route::get('/bus_ticket/trip_info', 'App\Http\Controllers\BusTicketController@trip_info')->name('trip_info');
-Route::get('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTicketController@confirm_ticket')->name('confirm_ticket');
-Route::post('/bus_ticket/trip_info/confirm_ticket', 'App\Http\Controllers\BusTicketController@save_ticket_info')->name('save_ticket_info')->middleware('auth');;
-
-// Users
-Route::get('/users/dashboard','App\Http\Controllers\Users\UserController@dashboard')->name('users.dashboard')->middleware('auth');
-Route::get('/users/user_profile','App\Http\Controllers\Users\UserController@user_profile')->name('user_profile')->middleware('auth');
-Route::post('/users/user_profile','App\Http\Controllers\Users\UserController@update_profile')->name('update_profile.post');
+});
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+*/
+Route::group(['middleware' => ['admin']], function () {
+    Route::group(['prefix' => '/admin'], function () {
+        Route::get('/', [BackPagesController::class, 'dashboard'])->name('admin.dashboard');
+        Route::get('/add_bus_service', [BackPagesController::class, 'add_bus_service'])->name('add_bus_service');
+        Route::resource('/bus_service_update', BackPagesController::class);
+        Route::post('/add_bs_service', [BackPagesController::class, 'save_bus_info'])->name('save_bus_info');
+    });
+});
+/*
+|--------------------------------------------------------------------------
+| User Routes
+|--------------------------------------------------------------------------
+*/
+Route::group(['middleware' => 'auth'], function() {
+    Route::group(['prefix' => '/user'], function () {
+        Route::get('/dashboard', [UserController::class, 'dashboard'])->name('users.dashboard');
+        Route::get('/purchase-history', [UserController::class, 'purchase_history'])->name('purchase_history');
+        Route::get('/user_profile', [UserController::class, 'user_profile'])->name('user_profile');
+        Route::post('/user_profile', [UserController::class, 'update_profile'])->name('update_profile.post');
+    });
+});
