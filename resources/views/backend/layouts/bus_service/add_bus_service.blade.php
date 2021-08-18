@@ -40,6 +40,14 @@
             box-shadow:none;
         }
     </style>
+    <div class="bs-example">
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item active">Add Bus Service</li>
+            </ol>
+        </nav>
+    </div>
     <div class="page-wrapper">
     <div class="container contact">
         <div class="row">

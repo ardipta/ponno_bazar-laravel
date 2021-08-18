@@ -889,7 +889,6 @@ footer {
     display: block;
     padding: .7rem 1.5rem;
     font-size: .85rem;
-    display: flex;
     align-items: center;
     transition: all .5s
 }
@@ -899,16 +898,16 @@ footer {
 }
 
 .sidebar-wrapper .menu .sidebar-link>span {
-    color: #053382;
-    font-weight: 500;
-    margin-left: 1rem;
-    opacity: .8
+    color: #4cb320;
+    font-weight: 600;
+    margin-left: .3rem;
 }
 
 .sidebar-wrapper .menu .sidebar-item {
     list-style: none;
-    margin-top: .5rem;
-    position: relative
+    padding: 0.5rem 0.3rem .5rem;
+    position: relative;
+    font-size: .8rem;
 }
 
 .sidebar-wrapper .menu .sidebar-item.has-sub .sidebar-link:after {

@@ -32,7 +32,7 @@
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
             <ul class="vertical-nav-menu">
-                <li class="app-sidebar__heading">Wallet Balance <span style="color: green; float: right">BDT 0.00</span></li>
+                <li class="app-sidebar__heading">Wallet Balance <span style="color: green; float: right">BDT {{number_format((float)auth()->user()->current_balance, 2, '.', '')}}</span></li>
                 <li class="app-sidebar__heading">Dashboard</li>
                 <li>
                     <a href="index.html" class="mm-active">

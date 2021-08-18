@@ -24,6 +24,8 @@ class User extends Authenticatable
         'gender',
         'password',
         'image',
+        'current_balance',
+        'cashback_balance'
     ];
 
     /**

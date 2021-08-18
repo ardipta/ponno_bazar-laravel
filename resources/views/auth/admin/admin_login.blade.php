@@ -106,7 +106,7 @@
                         <div class="input-group-append">
                             <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                         </div>
-                        <input type="text" name="email" class="form-control input_user" value="" placeholder="Email">
+                        <input type="email" name="email" class="form-control input_user" placeholder="Email">
                     </div>
                     @if ($errors->has('email'))
                         <span class="text-danger" style="font-weight: bold">{{ $errors->first('email') }}</span>

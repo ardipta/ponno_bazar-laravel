@@ -12,6 +12,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+    <style>
+        .bs-example{
+            margin: 20px;
+        }
+        /* Style to change separator  */
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: "=>";
+        }
+    </style>
 </head>
 <body>
 <div id="app">

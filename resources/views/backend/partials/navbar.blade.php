@@ -52,8 +52,8 @@
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
 {{--                    <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>--}}
-{{--                    <a class="dropdown-item active" href="#"><i data-feather="mail"></i> Messages</a>--}}
-{{--                    <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>--}}
+                    <a class="dropdown-item" href="{{route('edit_profile.admin')}}"><i data-feather="user"></i> Edit Profile</a>
+                    <a class="dropdown-item" href="{{route('edit_password.admin')}}"><i data-feather="key"></i>Change Password</a>
                     <form style="line-height: 0; min-height: 15px;" class="profile-pic dropdown-item" action="{{route('admin_logout')}}" method="POST">
                         @csrf
                         <button type="submit" style="background: none!important;

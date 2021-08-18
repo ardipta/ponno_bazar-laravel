@@ -70,14 +70,14 @@
                         <div class="card-body p-0">
                             <div class="d-flex flex-column">
                                 <div class='px-3 py-3 d-flex justify-content-between'>
-                                    <h3 class='card-title'>Total Purchase amount</h3>
+                                    <h3 class='card-title'>Total Purchase</h3>
                                     <div class="card-right d-flex align-items-center">
                                         <p>0৳</p>
                                     </div>
                                 </div>
                                 <div class='px-3 py-3 d-flex justify-content-between'>
                                     <div class="card-title">
-                                        <i class="fa fa-tags fa-3x" style="color: white"></i>
+                                        <i class="fa fa-dollar-sign fa-3x" style="color: white"></i>
                                     </div>
                                 </div>
                             </div>
@@ -92,9 +92,9 @@
                 <div class="card-header text-center" style="font-weight: bolder; font-size: 20px">
                     Bus Service Details
                 </div>
-                <div class="card-body">
-                    <table class='table table-striped' id="table1">
-                        <thead>
+                <div class="card-body" style="width:100%; overflow-x:auto;">
+                    <table class='align-middle mb-0 table table-borderless table-striped table-hover' id="table1">
+                        <thead style="background-color: #4cb320; color: white">
                         <tr>
                             <th>ID</th>
                             <th>From</th>
@@ -116,7 +116,7 @@
                         </thead>
                         <tbody>
                         @foreach($bus_info as $bus)
-                            <tr>
+                            <tr style="color: black">
                                 <td>{{$bus->id}}</td>
                                 <td>{{$bus->from}}</td>
                                 <td>{{$bus->to}}</td>
@@ -131,11 +131,7 @@
                                 <td>{{$bus->date_range_to}}</td>
                                 <td>{{$bus->total_seat}}</td>
                                 <td>{{$bus->fare}}</td>
-                                @if($bus->bus_image)
-                                    <td><img src="{{asset("uploads/bus_images/{$bus->bus_image}")}}" class="img-fluid" style="max-width: 100%; height: 50px"></td>
-                                @else
-                                    <td><img src="{{asset("images/bus_demo.png")}}" class="img-fluid" style="max-width: 100%; height: 50px"></td>
-                                @endif
+                                <td><img src="{{$bus->bus_image=="" ? asset('assets/images/bus.png') : asset("uploads/bus_images/{$bus->bus_image}")}}" class="img-fluid" style="max-width: 100%; height: 50px"></td>
                                 <td>
                                     <div class="btn-group">
                                         <button type="submit" title="Update/Edit" id="edit" class="btn" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fa fa-edit"></i></button>

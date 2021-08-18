@@ -20,8 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('gender')->nullable();
             $table->string('phone')->unique();
             $table->string('date_of_birth')->nullable();
-            $table->string('password')->nullable();
             $table->string('image')->nullable();  //php artisan migrate:refresh --path=/database/migrations/fileName.php
+            $table->bigInteger('current_balance')->default(0.00);
+            $table->bigInteger('cashback_balance')->default(0.00);
             $table->rememberToken();
             $table->timestamps();
         });

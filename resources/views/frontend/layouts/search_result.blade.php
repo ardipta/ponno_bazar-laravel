@@ -20,9 +20,9 @@
                 <hr>
                 <h3 style="font-weight: bolder">Date: {{ $key_date_range_from }}</h3>
             </div>
-            <div class="card-body">
-                <table class='table table-striped' id="table1">
-                    <thead>
+            <div class="card-body container-fluid">
+                <table class='align-middle mb-0 table table-borderless table-striped table-hover' id="table1">
+                    <thead style="background-color: #4CB320; color: white">
                     <tr>
                         <th>Bus Operator</th>
                         <th>Departure Time</th>

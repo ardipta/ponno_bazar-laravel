@@ -6,8 +6,10 @@
                 <div class="page-title-wrapper">
                     <div class="page-title-heading">
                         <div class="page-title-icon">
-                            <i class="pe-7s-car icon-gradient bg-mean-fruit">
-                            </i>
+                            <a href="{{route('index')}}">
+                                <i class="pe-7s-home icon-gradient bg-mean-fruit">
+                                </i>
+                            </a>
                         </div>
                         <div>Ponnobazar User Dashboard
                             <div class="page-title-subheading">
@@ -36,10 +38,10 @@
                         <div class="widget-content-wrapper text-white">
                             <div class="widget-content-left">
                                 <div class="widget-heading">Account Balance</div>
-                                <div class="widget-subheading">For all time</div>
+                                <div class="widget-subheading">Available current balance</div>
                             </div>
                             <div class="widget-content-right">
-                                <div class="widget-numbers text-white"><span>BDT 0.00</span></div>
+                                <div class="widget-numbers text-white"><span>BDT {{number_format((float)auth()->user()->current_balance, 2, '.', '')}}</span></div>
                             </div>
                         </div>
                     </div>
@@ -49,10 +51,10 @@
                         <div class="widget-content-wrapper text-white">
                             <div class="widget-content-left">
                                 <div class="widget-heading">Cashback Balance</div>
-                                <div class="widget-subheading">Available cashback balance</div>
+                                <div class="widget-subheading">Total cashback balance</div>
                             </div>
                             <div class="widget-content-right">
-                                <div class="widget-numbers text-white"><span>BDT 0.00</span></div>
+                                <div class="widget-numbers text-white"><span>BDT {{number_format((float)auth()->user()->cashback_balance, 2, '.', '')}}</span></div>
                             </div>
                         </div>
                     </div>

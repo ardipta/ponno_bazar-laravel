@@ -11,17 +11,14 @@ class BackPagesController extends Controller
 {
     public function dashboard(){
         $bus_info = DB::table('bus_services')->orderBy('created_at', 'DESC')->get();
-        $users = DB::table('users')->where('is_admin', '1')->first();
-        $total_users = DB::table('users')->where('is_admin', '1')->get();
+        $total_users = DB::table('users')->get();
         return view('backend.layouts.dashboard', [
-            'users' => $users,
             'bus_info' => $bus_info,
             'total_users' => $total_users,
         ]);
     }
     public function add_bus_service(){
-        $users = DB::table('users')->where('is_admin', '1')->first();
-        return view('backend.layouts.add_bus_service', ['users' => $users]);
+        return view('backend.layouts.add_bus_service');
     }
     public function save_bus_info(Request $request){
         $fileName = "";

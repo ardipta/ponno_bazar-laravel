@@ -30,27 +30,27 @@
                                 <div class="form-group col-md-6">
                                     <label>Name</label>
                                     <input type="text" name="fullName" class="form-control" value="{{auth()->user()->first_name." ".auth()->user()->last_name}}">
-                                    <input type="text" name="from" style="display: none" class="form-control" value="{{$confirm->from}}">
+                                    <input type="hidden" name="from" class="form-control" value="{{$confirm->from}}">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Phone Number</label>
                                     <input name="phone" type="number" class="form-control" value="{{auth()->user()->phone}}">
-                                    <input name="to" type="text" style="display: none" value="{{$confirm->to}}" class="form-control">
+                                    <input name="to" type="hidden" value="{{$confirm->to}}" class="form-control">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Gender</label>
                                     <input type="text" name="gender" class="form-control" value="{{auth()->user()->gender}}">
-                                    <input name="bus_service" style="display: none" type="text" value="{{$confirm->bus_service_name}}" class="form-control">
+                                    <input name="bus_service" type="hidden" value="{{$confirm->bus_service_name}}" class="form-control">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Email Address</label>
                                     <input name="emailAddress" type="email" class="form-control" placeholder="Enter your email address">
-                                    <input name="date_from" type="text" style="display: none" value="{{$confirm->date_range_from}}" class="form-control">
-                                    <input name="dep_time" type="text" style="display: none" value="{{$confirm->departure_time}}" class="form-control">
-                                    <input name="seat_no" type="text" style="display: none" value="{{$seat_number}}" class="form-control">
-                                    <input name="fare" type="text" style="display: none" value="{{$total_fare}}" class="form-control">
+                                    <input name="date_from" type="hidden" value="{{$confirm->date_range_from}}" class="form-control">
+                                    <input name="dep_time" type="hidden" value="{{$confirm->departure_time}}" class="form-control">
+                                    <input name="seat_no" type="hidden" value="{{$seat_number}}" class="form-control">
+                                    <input name="fare" type="hidden" value="{{$total_fare}}" class="form-control">
                                 </div>
                             </div>
                             <div class="form-row">
@@ -62,31 +62,33 @@
                     </form>
                 </div>
                 <div class="form-row col-md-4">
-                    <h3>
+                    <h3 style="text-align: center">
                         Journey Details
                     </h3>
                     <hr>
                     @foreach($confirms as $confirm)
-                        <span style="font-size: 22px; font-weight: bold">{{$confirm->from}} - {{$confirm->to}}</span><br>
-                        <span>{{$confirm->bus_service_name}}</span><br><br>
-                        Date of Journey: <span>{{$confirm->date_range_from.", ".$confirm->departure_time}}</span><br>
-                        Number of Seat: <span id="fare">{{$seat_number}}</span><br>
-                        Total: ৳ <span id="fare">{{$total_fare}}</span>
+                        <div style="text-align: center">
+                            <span style="font-size: 22px; font-weight: bold">{{$confirm->from}} - {{$confirm->to}}</span><br>
+                            <span>{{$confirm->bus_service_name}}</span><br><br>
+                            Date of Journey: <span>{{$confirm->date_range_from.", ".$confirm->departure_time}}</span><br>
+                            Number of Seat: <span id="fare">{{$seat_number}}</span><br>
+                            Total: ৳ <span id="fare">{{$total_fare}}</span>
+                        </div>
                     @endforeach
                 </div>
             </div>
             <div class="col-lg-12">
                 <h2 class="text-center">Terms & Conditions of Ticket Purchase</h2>
                 <div class="container">
-                    <ul style="margin-top: 10px">
-                        <li>পণ্যবাজার থেকে টিকিট কেনার ক্ষেত্রে অবশ্যই টাইম সিডিউল এবং ডেট দেখে কনফার্ম করুন।</li>
-                        <li>টিকেট কেনার পর থেকে ভেলিডিটি টাইম থাকবে 30 দিন।</li>
-                        <li>জার্নির 2 ঘণ্টা আগে সীট কনফার্ম করতে হবে কল সেন্টার  ফোন দিতে হবে।</li>
-                        <li>পণ্যবাজার যেকোনো সময় টাইম শিডিউল পরিবর্তন করতে পারবে। </li>
-                        <li>পণ্যবাজার এর যে কোন ইনফরমেশন জানার জন্য +880 156-808-6107 এই নাম্বারে কল দিতে হবে। </li>
-                        <li>টিকেট ক্যান্সলেশন এবং রিফান্ড পলিসি অ্যাপ্লিকেবিল নয়।</li>
-                        <li>ক্যাশব্যাক এর টাকা আপনার ওয়ালেট এ থাকবে।</li>
-                        <li>জার্নির মিনিমাম এক ঘন্টা আগে কাউন্টারে উপস্থিত থাকতে হবে।</li>
+                    <ul style="margin-top: 10px;">
+                        <li style="list-style-type: square;">পণ্যবাজার থেকে টিকিট কেনার ক্ষেত্রে অবশ্যই টাইম সিডিউল এবং ডেট দেখে কনফার্ম করুন।</li>
+                        <li style="list-style-type: square;">টিকেট কেনার পর থেকে ভেলিডিটি টাইম থাকবে 30 দিন।</li>
+                        <li style="list-style-type: square;">জার্নির 2 ঘণ্টা আগে সীট কনফার্ম করতে হবে কল সেন্টার  ফোন দিতে হবে।</li>
+                        <li style="list-style-type: square;">পণ্যবাজার যেকোনো সময় টাইম শিডিউল পরিবর্তন করতে পারবে। </li>
+                        <li style="list-style-type: square;">পণ্যবাজার এর যে কোন ইনফরমেশন জানার জন্য +880 156-808-6107 এই নাম্বারে কল দিতে হবে। </li>
+                        <li style="list-style-type: square;">টিকেট ক্যান্সলেশন এবং রিফান্ড পলিসি অ্যাপ্লিকেবিল নয়।</li>
+                        <li style="list-style-type: square;">ক্যাশব্যাক এর টাকা আপনার ওয়ালেট এ থাকবে।</li>
+                        <li style="list-style-type: square;">জার্নির মিনিমাম এক ঘন্টা আগে কাউন্টারে উপস্থিত থাকতে হবে।</li>
                     </ul>
                 </div>
             </div>
