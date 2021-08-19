@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 class ProfileController extends Controller
 {
     public function editAdminProfile(){
-        return view('backend.layouts.edit_profile');
+        return view('backend.layouts.profile.edit_profile');
     }
 
     public function updateAdminProfile(Request $request): \Illuminate\Http\RedirectResponse
@@ -36,7 +36,7 @@ class ProfileController extends Controller
         }
     }
     public function editAdminPassword(){
-        return view('backend.layouts.change_password');
+        return view('backend.layouts.profile.change_password');
     }
 
     public function updateAdminPassword(Request $request): \Illuminate\Http\RedirectResponse

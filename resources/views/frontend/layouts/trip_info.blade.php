@@ -33,6 +33,7 @@
                                 <label style="margin-bottom: 10px;">Total</label>
                                 <input id="totalFareAmount" readonly name="totalFare" type="number" class="form-control">
                                 <input name="id" type="hidden" value="{{$trip->id}}" class="form-control">
+                                <input name="journeyDate" type="hidden" value="{{$journeyDate}}" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
@@ -54,7 +55,7 @@
                     <hr>
                     <span style="font-size: 22px; font-weight: bold">{{$trip->from}} - {{$trip->to}}</span><br>
                     <span>{{$trip->bus_service_name}}</span><br><br>
-                    Date of Journey: <span>{{$trip->date_range_from}}</span><br>
+                    Date of Journey: <span>{{$journeyDate}}</span><br>
                     Departure Time: <span>{{$trip->departure_time}}</span><br>
                     Arrival Time: <span>{{$trip->arrival_time}}</span><br>
                     Fare: ৳ <span id="fare">{{$trip->fare}}</span>

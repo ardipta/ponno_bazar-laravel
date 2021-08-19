@@ -13,6 +13,7 @@ class UsersPurchase extends Model
         'journey_id',
         'user_name',
         'user_mobile',
+        'user_email',
         'cashback_amount',
     ];
 }

@@ -21,6 +21,7 @@
         <div class="row">
             <div class="col-md-12" style="margin: 20px">
                 <div class="form-row col-md-8">
+                    @include('partials.flash_message')
                     <h3 style="text-align: center">Passenger Details</h3>
                     <hr>
                     <form action="{{route('save_ticket_info')}}" method="POST">
@@ -40,19 +41,26 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label>Gender</label>
-                                    <input type="text" name="gender" class="form-control" value="{{auth()->user()->gender}}">
-                                    <input name="bus_service" type="hidden" value="{{$confirm->bus_service_name}}" class="form-control">
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label>Email Address</label>
+                                    <label>Email Address</label><small> (Optional)</small>
                                     <input name="emailAddress" type="email" class="form-control" placeholder="Enter your email address">
-                                    <input name="date_from" type="hidden" value="{{$confirm->date_range_from}}" class="form-control">
+                                    <input name="journey_date" type="hidden" value="{{$journeyDate}}" class="form-control">
                                     <input name="dep_time" type="hidden" value="{{$confirm->departure_time}}" class="form-control">
                                     <input name="seat_no" type="hidden" value="{{$seat_number}}" class="form-control">
                                     <input name="fare" type="hidden" value="{{$total_fare}}" class="form-control">
                                 </div>
+                                <div class="form-group col-md-6">
+                                    <label>Coupon</label><small> (Optional)</small>
+                                    <input name="coupon" type="text" class="form-control" placeholder="Enter coupon for discount or cashback">
+                                </div>
                             </div>
+                            @if(auth()->user()->current_balance > 0)
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <input class="form-check-input" name="walletBalance" type="checkbox" id="walletBalance" >
+                                        <label class="form-check-label" for="agree-faq">Available Wallet Balance BDT <span id="current">{{auth()->user()->current_balance}}</span>. Use Wallet?</label>
+                                    </div>
+                                </div>
+                            @endif
                             <div class="form-row">
                                 <div class="form-group col-md-12">
                                     <button type="submit" style="background-color: #84C639; color: white" class="btn form-control">Confirm</button>
@@ -70,8 +78,9 @@
                         <div style="text-align: center">
                             <span style="font-size: 22px; font-weight: bold">{{$confirm->from}} - {{$confirm->to}}</span><br>
                             <span>{{$confirm->bus_service_name}}</span><br><br>
-                            Date of Journey: <span>{{$confirm->date_range_from.", ".$confirm->departure_time}}</span><br>
-                            Number of Seat: <span id="fare">{{$seat_number}}</span><br>
+                            Date of Journey: <span>{{$journeyDate.", ".$confirm->departure_time}}</span><br>
+                            Number of Seat: <span id="seat">{{$seat_number}}</span><br>
+                            <input type="hidden" value="{{$total_fare}}" id="hiddenFare">
                             Total: ৳ <span id="fare">{{$total_fare}}</span>
                         </div>
                     @endforeach
@@ -94,4 +103,26 @@
             </div>
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("#walletBalance").change(function() {
+
+            var mainFare =0;
+            var currentBalance = $("#current").text();
+            var ticketFare = $("#fare").text();
+            var hiddenFare = $("#hiddenFare").val();
+            if(this.checked) {
+                mainFare = parseFloat(ticketFare)-parseFloat(currentBalance);
+                if(mainFare<=0){
+                    mainFare = 0;
+                }
+                $("#fare").text(mainFare);
+                console.log("Checked "+mainFare);
+            }
+            else {
+                console.log("Unchecked "+hiddenFare);
+                $("#fare").text(hiddenFare);
+            }
+        });
+    </script>
 @endsection

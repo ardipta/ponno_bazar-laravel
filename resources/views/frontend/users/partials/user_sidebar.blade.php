@@ -35,7 +35,7 @@
                 <li class="app-sidebar__heading">Wallet Balance <span style="color: green; float: right">BDT {{number_format((float)auth()->user()->current_balance, 2, '.', '')}}</span></li>
                 <li class="app-sidebar__heading">Dashboard</li>
                 <li>
-                    <a href="index.html" class="mm-active">
+                    <a href="{{route('users.dashboard')}}" class="mm-active">
                         <i class="metismenu-icon pe-7s-display2"></i>
                         User Dashboard
                     </a>
@@ -44,26 +44,20 @@
                 <li>
                     <a href="#">
                         <i class="metismenu-icon pe-7s-graph2"></i>
-                        Order History
+                        Manage Purchase
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                     </a>
                     <ul>
                         <li>
-                            <a href="elements-dropdowns.html">
+                            <a href="{{route('ticket.pending')}}">
                                 <i class="metismenu-icon">
                                 </i>Pending
                             </a>
                         </li>
                         <li>
-                            <a href="elements-icons.html">
+                            <a href="{{route('ticket.confirmed')}}">
                                 <i class="metismenu-icon">
                                 </i>Confirmed
-                            </a>
-                        </li>
-                        <li>
-                            <a href="elements-badges-labels.html">
-                                <i class="metismenu-icon">
-                                </i>Cancelled
                             </a>
                         </li>
                     </ul>

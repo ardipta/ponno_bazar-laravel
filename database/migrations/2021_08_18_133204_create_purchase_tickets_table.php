@@ -16,6 +16,7 @@ class CreatePurchaseTicketsTable extends Migration
         Schema::create('purchase_tickets', function (Blueprint $table) {
             $table->id();
             $table->string('journey_id');
+            $table->string('user_id');
             $table->string('from');
             $table->string('to');
             $table->date('purchase_date');
@@ -26,6 +27,9 @@ class CreatePurchaseTicketsTable extends Migration
             $table->bigInteger('fare');
             $table->bigInteger('discounted_fare')->nullable();
             $table->bigInteger('discount_amount')->nullable();
+            $table->string('journey_status');
+            $table->string('validity');
+            $table->string('payment_method');
             $table->timestamps();
         });
     }

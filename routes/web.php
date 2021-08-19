@@ -5,8 +5,11 @@ use App\Http\Controllers\Auth\User\UserAuthController;
 use App\Http\Controllers\Backend\BackPagesController;
 use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\ProfileController;
+use App\Http\Controllers\Backend\TicketInfoController;
+use App\Http\Controllers\Backend\UserInfoController;
 use App\Http\Controllers\Frontend\BusTicketController;
 use App\Http\Controllers\Frontend\FrontPagesController;
+use App\Http\Controllers\Frontend\TicketPurchaseController;
 use App\Http\Controllers\Frontend\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,8 +32,8 @@ Route::get('/', [FrontPagesController::class, 'index'])->name('index');
 Route::get('/contact', [FrontPagesController::class, 'contact'])->name('contact');
 Route::get('/search_result', [BusTicketController::class, 'search_result'])->name('search_result');
 Route::get('/bus_ticket/trip_info', [BusTicketController::class, 'trip_info'])->name('trip_info');
-Route::get('/bus_ticket/trip_info/confirm_ticket', [BusTicketController::class, 'confirm_ticket'])->name('confirm_ticket');
-Route::post('/bus_ticket/trip_info/confirm_ticket', [BusTicketController::class, 'save_ticket_info'])->name('save_ticket_info')->middleware('auth');;
+Route::get('/bus_ticket/trip_info/confirm_ticket', [TicketPurchaseController::class, 'confirm_ticket'])->name('confirm_ticket');
+Route::post('/bus_ticket/trip_info/confirm_ticket', [TicketPurchaseController::class, 'save_ticket_info'])->name('save_ticket_info');
 
 
 /*
@@ -65,6 +68,10 @@ Route::group(['middleware' => ['admin']], function () {
         Route::post('/add_bs_service', [BackPagesController::class, 'save_bus_info'])->name('save_bus_info');
         //coupon route
         Route::resource('/coupon', CouponController::class, ['names' => 'admin.coupons']);
+        Route::get('/user-details', [UserInfoController::class, 'userInfo'])->name('user_info');
+        Route::group(['prefix' => '/tickets'], function () {
+            Route::get('/', [TicketInfoController::class, 'ticketInfo'])->name('ticket_info');
+        });
     });
 });
 /*
@@ -75,7 +82,8 @@ Route::group(['middleware' => ['admin']], function () {
 Route::group(['middleware' => 'auth'], function() {
     Route::group(['prefix' => '/user'], function () {
         Route::get('/dashboard', [UserController::class, 'dashboard'])->name('users.dashboard');
-        Route::get('/purchase-history', [UserController::class, 'purchase_history'])->name('purchase_history');
+        Route::get('/purchase/confirmed', [UserController::class, 'confirmed'])->name('ticket.confirmed');
+        Route::get('/purchase/pending', [UserController::class, 'pending'])->name('ticket.pending');
         Route::get('/user_profile', [UserController::class, 'user_profile'])->name('user_profile');
         Route::post('/user_profile', [UserController::class, 'update_profile'])->name('update_profile.post');
     });

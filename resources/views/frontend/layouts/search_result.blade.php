@@ -51,6 +51,7 @@
                                 <form action="{{route('trip_info')}}" method="GET">
                                     {{ csrf_field() }}
                                     <input type="hidden" value="{{ $pep->id}}" name="id">
+                                    <input type="hidden" value="{{ $key_date_range_from }}" name="date_range_from">
                                     <button type="submit" class="btn btn-default" style="background-color: #4cb320; color: white">Next</button>
                                 </form>
                             </td>

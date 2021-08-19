@@ -11,8 +11,8 @@
         <ul class="menu">
             <li class='sidebar-title'><a href="{{route('admin.dashboard')}}"><i class="fa fa-chart-bar"></i> Dashboard</a></li>
             <li class='sidebar-title'><a href="{{route('add_bus_service')}}"><i class="fa fa-plus-square"></i> Add Bus Service</a></li>
-            <li class='sidebar-title'><a href="#"><i class="fa fa-user-md"></i> User Details</a></li>
-            <li class='sidebar-title'><a href="#"><i class="fa fa-user-md"></i> Ticket Purchase Details</a></li>
+            <li class='sidebar-title'><a href="{{route('user_info')}}"><i class="fa fa-user-md"></i> User Details</a></li>
+            <li class='sidebar-title'><a href="{{route('ticket_info')}}"><i class="fa fa-ticket-alt"></i> Ticket Purchase Details</a></li>
             <li class="sidebar-item">
                 <a href="#" class='sidebar-link'>
                     <i class="fa fa-paperclip"></i>

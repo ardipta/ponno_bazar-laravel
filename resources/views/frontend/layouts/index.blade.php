@@ -100,7 +100,7 @@
                         <div class="form-group">
                             <label class="inputLabel" for="from">From</label>
                             <select class="form-control" id="from" name="from">
-                                <option value="default">--Select From Point--</option>
+                                <option selected disabled>--Select From Point--</option>
                                 @foreach ($buses_from as $bus)
                                     <option value="{{$bus->from}}">{{$bus->from}}</option>
                                 @endforeach
@@ -111,7 +111,7 @@
                         <div class="form-group">
                             <label class="inputLabel" for="to">To</label>
                             <select class="form-control" id="to" name="to">
-                                <option value="default">--Select To Point--</option>
+                                <option selected disabled>--Select To Point--</option>
                                 @foreach ($buses_to as $bus_to)
                                     <option value="{{$bus_to->to}}">{{$bus_to->to}}</option>
                                 @endforeach

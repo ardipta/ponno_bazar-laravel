@@ -11,6 +11,7 @@ class PurchaseTicket extends Model
 
     protected $fillable = [
         'journey_id',
+        'user_id',
         'from',
         'to',
         'purchase_date',
@@ -20,6 +21,9 @@ class PurchaseTicket extends Model
         'number_of_seat',
         'fare',
         'discounted_fare',
-        'discount_amount'
+        'discount_amount',
+        'journey_status',
+        'validity',
+        'payment_method',
     ];
 }

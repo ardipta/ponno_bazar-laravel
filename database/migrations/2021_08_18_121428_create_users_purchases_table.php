@@ -18,7 +18,8 @@ class CreateUsersPurchasesTable extends Migration
             $table->string('journey_id');
             $table->string('user_name');
             $table->string('user_mobile');
-            $table->bigInteger('cashback_amount');
+            $table->string('user_email')->nullable();
+            $table->bigInteger('cashback_amount')->nullable();
             $table->timestamps();
         });
     }
