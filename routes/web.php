@@ -53,7 +53,7 @@ Route::group(['prefix' => '/auth'], function(){
 });
 /*
 |--------------------------------------------------------------------------
-| Admin Routes
+| Administration Routes
 |--------------------------------------------------------------------------
 */
 Route::group(['middleware' => ['admin']], function () {

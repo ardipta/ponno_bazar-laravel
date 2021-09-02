@@ -18,7 +18,7 @@ class BackPagesController extends Controller
         ]);
     }
     public function add_bus_service(){
-        return view('backend.layouts.add_bus_service');
+        return view('backend.layouts.bus_service.add_bus_service');
     }
     public function save_bus_info(Request $request){
         $fileName = "";

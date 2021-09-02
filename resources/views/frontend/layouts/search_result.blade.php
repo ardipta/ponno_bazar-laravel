@@ -1,5 +1,10 @@
 @extends('frontend.master')
 @section('content')
+    <style>
+        #table1 th{
+            text-align: center;
+        }
+    </style>
     <div class=" container container-md-fluid ">
         <div class="row ">
             <div class="col-auto col-md-10 ">
@@ -20,20 +25,22 @@
                 <hr>
                 <h3 style="font-weight: bolder">Date: {{ $key_date_range_from }}</h3>
             </div>
-            <div class="card-body container-fluid">
+            <div class="card-body container-fluid" style="width:100%; overflow-x:auto;">
                 <table class='align-middle mb-0 table table-borderless table-striped table-hover' id="table1">
                     <thead style="background-color: #4CB320; color: white">
                     <tr>
-                        <th>Bus Operator</th>
-                        <th>Departure Time</th>
-                        <th>Arrival Time</th>
-                        <th>Seat Available</th>
-                        <th>Fare</th>
+                        <th style="width: 5%">#</th>
+                        <th style="width: 40%">Bus Operator</th>
+                        <th style="width: 20%">Departure Time</th>
+                        <th style="width: 20%">Arrival Time</th>
+                        <th style="width: 10%">Seat Available</th>
+                        <th style="width: 5%">Fare</th>
                     </tr>
                     </thead>
                     <tbody>
                         @foreach($posts as $pep)
                         <tr>
+                            <td>{{$loop->index+1}}</td>
                             <td>
                                 <span style="font-weight: bold; font-size: 20px; color: black">{{ $pep->bus_service_name }}</span><br>
                                 <span style="font-weight: bold; font-size: 20px; color: black">Route: {{ $pep->route }}</span><br>
